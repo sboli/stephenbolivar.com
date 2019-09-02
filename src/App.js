@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import styled, { ThemeProvider } from 'styled-components';
+import Grid from 'hedron';
+import theme from './theme';
+
+const Root = styled.div`
+    color: ${props => props.theme.textPrimary};
+    font-family: 'Montserrat', sans-serif;
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ThemeProvider theme={theme}>
+            <Grid.Provider padding="20px" breakpoints={{ sm: '-500', md: '501-750', lg: '+750' }}>
+                <Root className="App">
+                    <Navbar></Navbar>
+                </Root>
+            </Grid.Provider>
+        </ThemeProvider>
+    );
 }
 
 export default App;

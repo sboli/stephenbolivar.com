@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import styled, { ThemeProvider } from 'styled-components';
 import Grid from 'hedron';
 import theme from './theme';
+import './App.scss';
 
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavbarItem from './NavbarItem';
 import Grid from 'hedron';
@@ -21,6 +21,9 @@ const TopMenu = styled.div`
 `;
 
 export default function Navbar() {
+    const [hamburgerClasses, setHamburgerClasses] = useState('hamburger hamburger--collapse');
+    const handleMenuClick = e => {};
+
     return (
         <>
             <TopMenu>

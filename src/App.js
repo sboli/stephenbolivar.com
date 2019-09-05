@@ -1,23 +1,23 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import styled, { ThemeProvider } from 'styled-components';
-import Grid from 'hedron';
 import theme from './theme';
 import './App.scss';
+import Home from './components/Home';
 
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};
     font-family: 'Montserrat', sans-serif;
+    padding: 20px;
 `;
 
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <Grid.Provider padding="20px" breakpoints={{ sm: '-500', md: '501-750', lg: '+750' }}>
-                <Root className="App">
-                    <Navbar></Navbar>
-                </Root>
-            </Grid.Provider>
+            <Root className="App">
+                <Navbar></Navbar>
+                <Home></Home>
+            </Root>
         </ThemeProvider>
     );
 }

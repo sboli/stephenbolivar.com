@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavbarItem from './NavbarItem';
 import Grid from 'hedron';
 import device from '../mediaqueries';
+import MenuButton from './MenuButton';
 
 const TopMenu = styled.div`
     @media ${device.mobileS} {
@@ -20,8 +21,17 @@ const TopMenu = styled.div`
     }
 `;
 
+const MenuButtonContainer = styled.div`
+    @media ${device.mobileS} {
+        display: flex;
+        justify-content: end;
+    }
+    @media ${device.tablet} {
+        display: none;
+    }
+`;
+
 export default function Navbar() {
-    const [hamburgerClasses, setHamburgerClasses] = useState('hamburger hamburger--collapse');
     const handleMenuClick = e => {};
 
     return (
@@ -33,6 +43,9 @@ export default function Navbar() {
                 <NavbarItem>Expériences</NavbarItem>
                 <NavbarItem>Portfolio</NavbarItem>
             </TopMenu>
+            <MenuButtonContainer>
+                <MenuButton></MenuButton>
+            </MenuButtonContainer>
         </>
     );
 }

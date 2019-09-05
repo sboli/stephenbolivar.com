@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Root = styled.div`
     flex-grow: 1;
     text-align: center;
-    height: 40px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;

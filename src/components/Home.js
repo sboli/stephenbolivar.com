@@ -7,7 +7,7 @@ const Root = styled.div`
     height: 100vh;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 30% 5% 40% 15%;
+    grid-template-rows: 10% 30% 5% 15% 15%;
 `;
 
 export default function Home() {

@@ -4,11 +4,12 @@ import styled, { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import './App.scss';
 import Home from './components/Home';
+import About from './components/About';
 
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};
     font-family: 'Montserrat', sans-serif;
-    padding: 20px;
+    height: 100vh;
 `;
 
 function App() {

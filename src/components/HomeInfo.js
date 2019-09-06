@@ -5,9 +5,10 @@ import HomeInfoContact from './HomeInfoContact';
 const Root = styled.div`
     font-weight: bold;
     justify-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
 `;
 
 export default function HomeTitle() {

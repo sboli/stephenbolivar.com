@@ -6,15 +6,16 @@ import device from '../mediaqueries';
 import MenuButton from './MenuButton';
 
 const TopMenu = styled.div`
+    margin-left: auto;
+    margin-right: auto;
     @media ${device.mobileS} {
         display: none;
     }
     @media ${device.tablet} {
-        display: flex;
-        max-width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: space-around;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
     }
     @media ${device.laptopL} {
         max-width: 60%;
@@ -23,8 +24,9 @@ const TopMenu = styled.div`
 
 const MenuButtonContainer = styled.div`
     @media ${device.mobileS} {
-        display: flex;
-        justify-content: end;
+        width: 100%;
+        display: block;
+        text-align: right;
     }
     @media ${device.tablet} {
         display: none;
@@ -44,7 +46,7 @@ export default function Navbar() {
                 <NavbarItem>Portfolio</NavbarItem>
             </TopMenu>
             <MenuButtonContainer>
-                <MenuButton></MenuButton>
+                <MenuButton onClick={handleMenuClick}></MenuButton>
             </MenuButtonContainer>
         </>
     );

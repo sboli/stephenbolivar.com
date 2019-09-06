@@ -4,7 +4,7 @@ import { useSpring, animated, config } from 'react-spring';
 
 const FaceImgImpl = styled.img`
     display: block;
-    height: 100%;
+    max-height: 100%;
     width: auto;
     border-radius: 50%;
     margin-left: auto;

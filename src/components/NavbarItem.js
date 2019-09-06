@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Root = styled.div`
-    flex-grow: 1;
     text-align: center;
-    height: 60px;
+    width: 100%;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;

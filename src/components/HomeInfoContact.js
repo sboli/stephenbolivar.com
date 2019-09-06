@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as feather from 'feather-icons';
+import PropTypes from 'prop-types';
 
 const Root = styled.div`
     display: flex;
@@ -26,3 +27,9 @@ export default function HomeInfoContact({ icon, text, href }) {
         </Root>
     );
 }
+
+HomeInfoContact.propTypes = {
+    icon: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired
+};

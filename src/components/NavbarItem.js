@@ -9,8 +9,8 @@ const Root = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
     flex-basis: 20%;
 `;
 

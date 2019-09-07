@@ -10,6 +10,12 @@ const Root = styled.div`
     color: ${props => props.theme.textPrimary};
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
+    width: 100vw;
+`;
+
+const Content = styled.div`
+    margin-left: 1rem;
+    margin-right: 1rem;
 `;
 
 function App() {
@@ -17,7 +23,9 @@ function App() {
         <ThemeProvider theme={theme}>
             <Root className="App">
                 <Navbar></Navbar>
-                <Home></Home>
+                <Content>
+                    <Home></Home>
+                </Content>
             </Root>
         </ThemeProvider>
     );

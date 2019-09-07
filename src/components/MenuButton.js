@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import AppContext from '../context';
 
 const Root = styled.div`
     padding: 0px;
@@ -8,11 +9,12 @@ const Root = styled.div`
 
 export default function MenuButton({ onClick }) {
     const [hamburgerClasses, setHamburgerClasses] = useState('hamburger hamburger--collapse');
+    const { state, dispatch } = useContext(AppContext);
 
     return (
         <Root>
             <button
-                onClick={onClick}
+                onClick={e => dispatch({ type: 'TOGGLE_MENU' })}
                 className={hamburgerClasses}
                 type="button"
                 aria-label="Menu"

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useReducer } from 'react';
 import Navbar from './components/Navbar';
 import styled, { ThemeProvider } from 'styled-components';
 import theme from './theme';
 import './App.scss';
 import Home from './components/Home';
 import About from './components/About';
+import AppContext, { appReducer } from './context';
 
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};
@@ -19,15 +20,22 @@ const Content = styled.div`
 `;
 
 function App() {
+    const [state, dispatch] = useReducer(appReducer, [
+        {
+            isMenuOpen: false
+        }
+    ]);
     return (
-        <ThemeProvider theme={theme}>
-            <Root className="App">
-                <Navbar></Navbar>
-                <Content>
-                    <Home></Home>
-                </Content>
-            </Root>
-        </ThemeProvider>
+        <AppContext.Provider value={{ state, dispatch }}>
+            <ThemeProvider theme={theme}>
+                <Root className="App">
+                    <Navbar></Navbar>
+                    <Content>
+                        <Home></Home>
+                    </Content>
+                </Root>
+            </ThemeProvider>
+        </AppContext.Provider>
     );
 }
 

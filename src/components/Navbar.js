@@ -47,7 +47,7 @@ export default function Navbar() {
                 <NavbarItem>Portfolio</NavbarItem>
             </TopMenu>
             <MenuButtonContainer>
-                <MenuButton onClick={handleMenuClick}></MenuButton>
+                <MenuButton></MenuButton>
             </MenuButtonContainer>
         </>
     );

@@ -27,6 +27,7 @@ const MenuButtonContainer = styled.div`
         width: 100%;
         display: block;
         text-align: right;
+        height: 8vh;
     }
     @media ${device.tablet} {
         display: none;

@@ -35,8 +35,6 @@ const MenuButtonContainer = styled.div`
 `;
 
 export default function Navbar() {
-    const handleMenuClick = e => {};
-
     return (
         <>
             <TopMenu>

@@ -7,9 +7,9 @@ const Root = styled.div`
     padding: 0px;
 `;
 
-export default function MenuButton({ onClick }) {
+export default function MenuButton() {
     const [hamburgerClasses, setHamburgerClasses] = useState('hamburger hamburger--collapse');
-    const { state, dispatch } = useContext(AppContext);
+    const { dispatch } = useContext(AppContext);
 
     return (
         <Root>

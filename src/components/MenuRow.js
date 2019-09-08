@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Root = styled.button`
@@ -17,11 +17,16 @@ const Root = styled.button`
 `;
 
 export default function MenuRow({ children, onClick, active }) {
-    const style = {
+    const [style, setStyle] = useState({
         fontWeight: active ? 'bold' : 'normal'
-    };
+    });
+    useEffect(() => {
+        setStyle({
+            fontWeight: active ? 'bold' : 'normal'
+        });
+    }, [active]);
     return (
-        <Root style={style}>
+        <Root style={style} onClick={onClick}>
             <nav>{children}</nav>
         </Root>
     );

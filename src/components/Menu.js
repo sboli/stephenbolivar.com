@@ -17,7 +17,8 @@ const Root = styled(animated.div)`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr repeat(5, 2fr) 1fr;
-    grid-gap: 2rem;
+    overflow: hidden;
+    align-items: stretch;
 `;
 
 const Backdrop = styled(animated.div)`
@@ -31,7 +32,7 @@ const Backdrop = styled(animated.div)`
 `;
 
 export default function Menu() {
-    const { state } = useContext(AppContext);
+    const { state, dispatch } = useContext(AppContext);
     const [first, setFirst] = useState(true);
     const style = useSpring({
         config: config.slow,
@@ -64,16 +65,32 @@ export default function Menu() {
         setFirst(false);
     }, []);
 
+    const handleClick = page => {
+        return e => {
+            dispatch({ type: 'SET_PAGE', activePage: page });
+        };
+    };
+
     return (
         <>
             {state.isMenuOpen && <Backdrop style={backdropStyle}></Backdrop>}
             <Root style={style}>
                 <animated.div style={closeStyle}>{state.isMenuOpen && <MenuButtonExit></MenuButtonExit>}</animated.div>
-                <MenuRow active={state.activePage === 'home'}>Accueil</MenuRow>
-                <MenuRow active={state.activePage === 'about'}>À propos</MenuRow>
-                <MenuRow active={state.activePage === 'skills'}>Compétences</MenuRow>
-                <MenuRow active={state.activePage === 'experiences'}>Expériences</MenuRow>
-                <MenuRow active={state.activePage === 'portfolio'}>Portfolio</MenuRow>
+                <MenuRow active={state.activePage === 'home'} onClick={handleClick('home')}>
+                    Accueil
+                </MenuRow>
+                <MenuRow active={state.activePage === 'about'} onClick={handleClick('about')}>
+                    À propos
+                </MenuRow>
+                <MenuRow active={state.activePage === 'skills'} onClick={handleClick('skills')}>
+                    Compétences
+                </MenuRow>
+                <MenuRow active={state.activePage === 'experiences'} onClick={handleClick('experiences')}>
+                    Expériences
+                </MenuRow>
+                <MenuRow active={state.activePage === 'portfolio'} onClick={handleClick('portfolio')}>
+                    Portfolio
+                </MenuRow>
                 <div></div>
             </Root>
         </>

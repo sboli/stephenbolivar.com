@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
 import { device } from '../mediaqueries';
 
-const FaceImgImpl = styled.img`
+const FaceImgStyle = styled.img`
     grid-column: 1/3;
     grid-row: 2;
     justify-self: center;
@@ -21,7 +21,7 @@ const FaceImgImpl = styled.img`
     }
 `;
 
-const FaceImg = animated(FaceImgImpl);
+const FaceImg = animated(FaceImgStyle);
 
 export default function HomeFace() {
     const props = useSpring({

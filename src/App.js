@@ -6,12 +6,14 @@ import './App.scss';
 import Home from './components/Home';
 import About from './components/About';
 import AppContext, { appReducer } from './context';
+import Menu from './components/Menu';
 
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};
     font-family: 'Montserrat', sans-serif;
     height: 100vh;
     width: 100vw;
+    background-color: ${props => props.theme.background};
 `;
 
 const Content = styled.div`
@@ -20,15 +22,14 @@ const Content = styled.div`
 `;
 
 function App() {
-    const [state, dispatch] = useReducer(appReducer, [
-        {
-            isMenuOpen: false
-        }
-    ]);
+    const [state, dispatch] = useReducer(appReducer, {
+        isMenuOpen: false
+    });
     return (
         <AppContext.Provider value={{ state, dispatch }}>
             <ThemeProvider theme={theme}>
                 <Root className="App">
+                    <Menu></Menu>
                     <Navbar></Navbar>
                     <Content>
                         <Home></Home>

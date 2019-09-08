@@ -31,7 +31,7 @@ const StyledButton = styled.button`
     overflow: visible;
 `;
 
-export default function MenuButton() {
+export default function MenuButtonExit() {
     const { state, dispatch } = useContext(AppContext);
 
     return (
@@ -42,7 +42,7 @@ export default function MenuButton() {
                 aria-label="Menu"
                 aria-controls="navigation"
             >
-                <Icon name={'menu'}></Icon>
+                <Icon name={'x'}></Icon>
             </StyledButton>
             <nav id="navigation"></nav>
         </Root>

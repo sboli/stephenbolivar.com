@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import NavbarItem from './NavbarItem';
-import Grid from 'hedron';
 import device from '../mediaqueries';
 import MenuButton from './MenuButton';
 
@@ -22,18 +21,6 @@ const TopMenu = styled.div`
     }
 `;
 
-const MenuButtonContainer = styled.div`
-    @media ${device.mobileS} {
-        width: 100%;
-        display: block;
-        text-align: right;
-        height: 8vh;
-    }
-    @media ${device.tablet} {
-        display: none;
-    }
-`;
-
 export default function Navbar() {
     return (
         <>
@@ -44,9 +31,7 @@ export default function Navbar() {
                 <NavbarItem>Expériences</NavbarItem>
                 <NavbarItem>Portfolio</NavbarItem>
             </TopMenu>
-            <MenuButtonContainer>
-                <MenuButton></MenuButton>
-            </MenuButtonContainer>
+            <MenuButton></MenuButton>
         </>
     );
 }

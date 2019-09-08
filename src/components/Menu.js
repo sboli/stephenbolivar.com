@@ -40,7 +40,7 @@ export default function Menu() {
     const [first, setFirst] = useState(true);
     const [menuItems, setMenuItems] = useState([]);
     const style = useSpring({
-        config: config.slow,
+        config: config.default,
         to: {
             width: state.isMenuOpen ? '100%' : '0%'
         },
@@ -87,7 +87,7 @@ export default function Menu() {
         from: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
         enter: { opacity: 1, transform: 'translate3d(0,0px,0)' },
         leave: { opacity: 0, transform: 'translate3d(0,-40px,0)' },
-        trail: 200,
+        trail: 150,
         reset: state.isMenuOpen
     });
 

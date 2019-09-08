@@ -4,6 +4,7 @@ import AppContext from '../context';
 import { useSpring, animated, config, useChain } from 'react-spring';
 import MenuButtonExit from './MenuButtonExit';
 import MenuRow from './MenuRow';
+import items from '../menu-items';
 
 const Root = styled(animated.div)`
     color: ${props => props.theme.textPrimary};
@@ -76,21 +77,11 @@ export default function Menu() {
             {state.isMenuOpen && <Backdrop style={backdropStyle}></Backdrop>}
             <Root style={style}>
                 <animated.div style={closeStyle}>{state.isMenuOpen && <MenuButtonExit></MenuButtonExit>}</animated.div>
-                <MenuRow active={state.activePage === 'home'} onClick={handleClick('home')}>
-                    Accueil
-                </MenuRow>
-                <MenuRow active={state.activePage === 'about'} onClick={handleClick('about')}>
-                    À propos
-                </MenuRow>
-                <MenuRow active={state.activePage === 'skills'} onClick={handleClick('skills')}>
-                    Compétences
-                </MenuRow>
-                <MenuRow active={state.activePage === 'experiences'} onClick={handleClick('experiences')}>
-                    Expériences
-                </MenuRow>
-                <MenuRow active={state.activePage === 'portfolio'} onClick={handleClick('portfolio')}>
-                    Portfolio
-                </MenuRow>
+                {items.map(it => (
+                    <MenuRow active={state.activePage === it.id} onClick={handleClick(it.id)}>
+                        {it.title}
+                    </MenuRow>
+                ))}
                 <div></div>
             </Root>
         </>

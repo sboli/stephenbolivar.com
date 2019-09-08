@@ -4,6 +4,7 @@ import NavbarItem from './NavbarItem';
 import device from '../mediaqueries';
 import MenuButton from './MenuButton';
 import AppContext from '../context';
+import items from '../menu-items';
 
 const TopMenu = styled.div`
     margin-left: auto;
@@ -29,24 +30,15 @@ export default function Navbar() {
             dispatch({ type: 'SET_PAGE', activePage: page });
         };
     };
+
     return (
         <>
             <TopMenu>
-                <NavbarItem active={state.activePage === 'home'} onClick={handleClick('home')}>
-                    Accueil
-                </NavbarItem>
-                <NavbarItem active={state.activePage === 'about'} onClick={handleClick('about')}>
-                    À propos
-                </NavbarItem>
-                <NavbarItem active={state.activePage === 'skills'} onClick={handleClick('skills')}>
-                    Compétences
-                </NavbarItem>
-                <NavbarItem active={state.activePage === 'experiences'} onClick={handleClick('experiences')}>
-                    Expériences
-                </NavbarItem>
-                <NavbarItem active={state.activePage === 'portfolio'} onClick={handleClick('portfolio')}>
-                    Portfolio
-                </NavbarItem>
+                {items.map(it => (
+                    <NavbarItem active={state.activePage === it.id} onClick={handleClick(it.id)}>
+                        {it.title}
+                    </NavbarItem>
+                ))}
             </TopMenu>
             <MenuButton></MenuButton>
         </>

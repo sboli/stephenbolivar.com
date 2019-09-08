@@ -1,33 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-const Root = styled.button`
+const AnimatedRoot = styled(animated.div)`
     padding: 20px 20px;
-    display: inline-block;
     cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
     background-color: transparent;
     border: 0;
     margin: 0;
     overflow: visible;
     font-size: 2rem;
     color: inherit;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 `;
 
-export default function MenuRow({ children, onClick, active }) {
-    const [style, setStyle] = useState({
+export default function MenuRow({ children, onClick, active, style }) {
+    const [fontStyle, setFontStyle] = useState({
         fontWeight: active ? 'bold' : 'normal'
     });
     useEffect(() => {
-        setStyle({
+        setFontStyle({
             fontWeight: active ? 'bold' : 'normal'
         });
     }, [active]);
     return (
-        <Root style={style} onClick={onClick}>
+        <AnimatedRoot style={{ ...style, ...fontStyle }} onClick={onClick}>
             <nav>{children}</nav>
-        </Root>
+        </AnimatedRoot>
     );
 }

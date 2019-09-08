@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import NavbarItem from './NavbarItem';
 import device from '../mediaqueries';
 import MenuButton from './MenuButton';
+import AppContext from '../context';
 
 const TopMenu = styled.div`
     margin-left: auto;
@@ -22,14 +23,30 @@ const TopMenu = styled.div`
 `;
 
 export default function Navbar() {
+    const { state, dispatch } = useContext(AppContext);
+    const handleClick = page => {
+        return e => {
+            dispatch({ type: 'SET_PAGE', activePage: page });
+        };
+    };
     return (
         <>
             <TopMenu>
-                <NavbarItem>Accueil</NavbarItem>
-                <NavbarItem>À propos</NavbarItem>
-                <NavbarItem>Compétences</NavbarItem>
-                <NavbarItem>Expériences</NavbarItem>
-                <NavbarItem>Portfolio</NavbarItem>
+                <NavbarItem active={state.activePage === 'home'} onClick={handleClick('home')}>
+                    Accueil
+                </NavbarItem>
+                <NavbarItem active={state.activePage === 'about'} onClick={handleClick('about')}>
+                    À propos
+                </NavbarItem>
+                <NavbarItem active={state.activePage === 'skills'} onClick={handleClick('skills')}>
+                    Compétences
+                </NavbarItem>
+                <NavbarItem active={state.activePage === 'experiences'} onClick={handleClick('experiences')}>
+                    Expériences
+                </NavbarItem>
+                <NavbarItem active={state.activePage === 'portfolio'} onClick={handleClick('portfolio')}>
+                    Portfolio
+                </NavbarItem>
             </TopMenu>
             <MenuButton></MenuButton>
         </>

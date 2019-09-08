@@ -23,9 +23,9 @@ const NavbarItemLink = styled.a`
     }
 `;
 
-export default function NavbarItem({ children }) {
+export default function NavbarItem({ children, onClick, active }) {
     return (
-        <Root onClick={e => console.log('click')}>
+        <Root onClick={onClick} style={{ fontWeight: active ? 'bold' : 'normal' }}>
             <NavbarItemLink>{children}</NavbarItemLink>
         </Root>
     );

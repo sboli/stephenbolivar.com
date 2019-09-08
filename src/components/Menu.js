@@ -20,6 +20,8 @@ const Root = styled(animated.div)`
     grid-template-rows: 1fr repeat(5, 2fr) 1fr;
     overflow: hidden;
     align-items: stretch;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 0px 1px ${props => props.theme.textPrimary};
 `;
 
 const Backdrop = styled(animated.div)`

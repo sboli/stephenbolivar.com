@@ -23,7 +23,8 @@ const Content = styled.div`
 
 function App() {
     const [state, dispatch] = useReducer(appReducer, {
-        isMenuOpen: false
+        isMenuOpen: false,
+        activePage: 'about'
     });
     return (
         <AppContext.Provider value={{ state, dispatch }}>

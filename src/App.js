@@ -1,14 +1,12 @@
-import React, { useState, useReducer } from 'react';
-import Navbar from './components/Navbar';
+import React, { useReducer } from 'react';
+import { config, useTransition } from 'react-spring';
 import styled, { ThemeProvider } from 'styled-components';
-import theme from './theme';
 import './App.scss';
-import Home from './components/Home';
-import About from './components/About';
-import AppContext, { appReducer } from './context';
 import Menu from './components/Menu';
+import Navbar from './components/Navbar';
+import AppContext, { appReducer } from './context';
 import items from './menu-items';
-import { animated, useTransition, config } from 'react-spring';
+import theme from './theme';
 
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};
@@ -19,9 +17,17 @@ const Root = styled.div`
 `;
 
 const Content = styled.div`
-    margin-left: 1rem;
-    margin-right: 1rem;
-    overflow: hidden;
+    display: grid;
+    padding: 1rem;
+    height: 92vh;
+    grid-template-areas: 'main';
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    overflow-x: hidden;
+    overflow-y: visible;
+    z-index: 500;
 `;
 
 function App() {
@@ -30,9 +36,9 @@ function App() {
         activePage: 'home'
     });
     const transitions = useTransition(state.activePage, item => item, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
+        from: { opacity: 0, transform: 'translate3d(100%, 0, 0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
+        leave: { opacity: 0, transform: 'translate3d(-50%, 0, 0)' },
         config: config.slow
     });
     /*

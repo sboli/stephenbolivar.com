@@ -35,7 +35,7 @@ export default function Navbar() {
         <>
             <TopMenu>
                 {items.map(it => (
-                    <NavbarItem active={state.activePage === it.id} onClick={handleClick(it.id)}>
+                    <NavbarItem key={it.id} active={state.activePage === it.id} onClick={handleClick(it.id)}>
                         {it.title}
                     </NavbarItem>
                 ))}

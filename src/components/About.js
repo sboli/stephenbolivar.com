@@ -12,9 +12,9 @@ const Root = styled(animated.div)`
     grid-template-rows: 10% 30% 5% 15% 15%;
 `;
 
-export default function About({ style, key }) {
+export default function About({ style }) {
     return (
-        <Root style={style} key={key}>
+        <Root style={style}>
             <HomeFace></HomeFace>
         </Root>
     );

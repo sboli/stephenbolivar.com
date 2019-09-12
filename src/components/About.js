@@ -2,6 +2,7 @@ import React from 'react';
 import { animated } from 'react-spring';
 import styled from 'styled-components';
 import AboutImage from './AboutImage';
+import AboutText from './AboutText';
 
 const Root = styled(animated.div)`
     grid-area: main;
@@ -20,6 +21,7 @@ export default function About({ style }) {
     return (
         <Root style={style}>
             <AboutImage></AboutImage>
+            <AboutText></AboutText>
         </Root>
     );
 }

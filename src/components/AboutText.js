@@ -5,12 +5,13 @@ import device from '../mediaqueries';
 const Root = styled.div`
     grid-column: 1/3;
     grid-row: 2/3;
-    padding: 40px;
+    padding: 20px;
     align-self: start;
     @media ${device.tablet} {
         grid-column: 2/3;
         grid-row: 1/2;
         align-self: center;
+        padding: 70px;
     }
 `;
 

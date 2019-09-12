@@ -9400,6 +9400,11 @@ signal-exit@^3.0.0, signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
   integrity sha1-tf3AjxKH6hF4Yo5BXiUTK3NkbG0=
 
+simple-icons@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-1.15.0.tgz#87e5d28693b7e2ae123402f29381206a841ebb13"
+  integrity sha512-Dc/OfbWkhJC4Hc4oLcAb/mB9fdaRylnNZidc7YA1OqVQ7ErooahGhV3QrLYesZzMsrKQHTCLgdqTtyVCEHHIcA==
+
 simple-swizzle@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/simple-swizzle/-/simple-swizzle-0.2.2.tgz#a4da6b635ffcccca33f70d17cb92592de95e557a"

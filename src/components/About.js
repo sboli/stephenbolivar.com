@@ -3,6 +3,7 @@ import { animated } from 'react-spring';
 import styled from 'styled-components';
 import AboutImage from './AboutImage';
 import AboutText from './AboutText';
+import AboutIcons from './AboutIcons';
 
 const Root = styled(animated.div)`
     grid-area: main;
@@ -10,11 +11,10 @@ const Root = styled(animated.div)`
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-rows: auto auto auto;
     justify-content: space-evenly;
-    align-content: space-evenly;
-    align-items: center;
+    align-content: center;
+    align-items: start;
 `;
 
 export default function About({ style }) {
@@ -22,6 +22,7 @@ export default function About({ style }) {
         <Root style={style}>
             <AboutImage></AboutImage>
             <AboutText></AboutText>
+            <AboutIcons></AboutIcons>
         </Root>
     );
 }

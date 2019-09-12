@@ -35,7 +35,7 @@ function AboutIconsItem({ title, svg, url }) {
     });
     const toggle = () => set(state => !state);
     return (
-        <Root onMouseEnter={toggle} onMouseLeave={toggle}>
+        <Root onMouseEnter={toggle} onMouseLeave={toggle} onClick={toggle}>
             <AnimatedInfo style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }}>
                 OKK
             </AnimatedInfo>

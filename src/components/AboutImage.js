@@ -13,11 +13,20 @@ const Root = styled.div`
 
 const Image = styled.img`
     display: block;
-    width: 100%;
     height: auto;
-    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    @media ${device.mobileS} {
+        max-width: 100%;
+        padding: 20px;
+    }
+    @media ${device.mobileL} {
+        padding: 40px;
+        max-width: 80%;
+    }
     @media ${device.tablet} {
         padding: 70px;
+        max-width: 100%;
     }
 `;
 

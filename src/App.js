@@ -33,7 +33,7 @@ const Content = styled.div`
 function App() {
     const [state, dispatch] = useReducer(appReducer, {
         isMenuOpen: false,
-        activePage: 'home'
+        activePage: 'about'
     });
     const transitions = useTransition(state.activePage, item => item, {
         from: { opacity: 0, transform: 'translate3d(100%, 0, 0)' },

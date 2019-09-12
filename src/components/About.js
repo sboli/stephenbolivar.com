@@ -1,7 +1,7 @@
 import React from 'react';
 import { animated } from 'react-spring';
 import styled from 'styled-components';
-import HomeFace from './HomeFace';
+import AboutImage from './AboutImage';
 
 const Root = styled(animated.div)`
     grid-area: main;
@@ -9,13 +9,17 @@ const Root = styled(animated.div)`
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10% 30% 5% 15% 15%;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    align-items: center;
 `;
 
 export default function About({ style }) {
     return (
         <Root style={style}>
-            <HomeFace></HomeFace>
+            <AboutImage></AboutImage>
         </Root>
     );
 }

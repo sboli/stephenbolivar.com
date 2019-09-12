@@ -1,9 +1,6 @@
 import React from 'react';
 
-const AppContext = React.createContext({
-    isMenuOpen: false,
-    activePage: 'home'
-});
+const AppContext = React.createContext({});
 
 export default AppContext;
 

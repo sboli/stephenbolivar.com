@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import device from '../mediaqueries';
-import theme from '../theme';
 import react from 'simple-icons/icons/react';
 import graphql from 'simple-icons/icons/graphql';
 import vue from 'simple-icons/icons/vue-dot-js';
@@ -18,6 +17,7 @@ import aws from 'simple-icons/icons/amazonaws';
 import git from 'simple-icons/icons/git';
 import grafana from 'simple-icons/icons/grafana';
 import docker from 'simple-icons/icons/docker';
+import AboutIconsItem from './AboutIconsItem';
 
 const Root = styled.div`
     grid-column: 1/3;
@@ -35,12 +35,6 @@ const Root = styled.div`
     }
 `;
 
-const Icon = styled.div`
-    width: 100%;
-    height: auto;
-    fill: ${theme.textPrimary};
-`;
-
 const Row1 = styled.div`
     grid-column: 1/2;
     grid-row: 1/2;
@@ -48,7 +42,7 @@ const Row1 = styled.div`
 
 export default function AboutIcons() {
     const [stack, setStack] = useState([
-        react,
+        { ...react, title: 'ReactJS', url: 'https://reactjs.org/' },
         vue,
         sass,
         graphql,
@@ -68,9 +62,7 @@ export default function AboutIcons() {
     return (
         <Root>
             {stack.map(it => (
-                <a>
-                    <Icon key={it} dangerouslySetInnerHTML={{ __html: it.svg }}></Icon>
-                </a>
+                <AboutIconsItem key={it.title} title={it.title} svg={it.svg} url={it.url}></AboutIconsItem>
             ))}
         </Root>
     );

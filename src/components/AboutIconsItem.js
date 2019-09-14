@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '../theme';
 import { useSpring, animated as a } from 'react-spring';
+import device from '../mediaqueries';
 
 const Root = styled.div`
     width: 100%;
@@ -10,6 +11,10 @@ const Root = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+    @media ${device.laptop} {
+        padding: 40px;
+    }
 `;
 
 const Icon = styled.div`
@@ -37,7 +42,7 @@ function AboutIconsItem({ title, svg, url }) {
     return (
         <Root onMouseEnter={toggle} onMouseLeave={toggle} onClick={toggle}>
             <AnimatedInfo style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }}>
-                OKK
+                <strong>{title}</strong>
             </AnimatedInfo>
             <AnimatedIcon
                 dangerouslySetInnerHTML={{ __html: svg }}

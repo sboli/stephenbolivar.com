@@ -22,22 +22,18 @@ import AboutIconsItem from './AboutIconsItem';
 const Root = styled.div`
     grid-column: 1/3;
     grid-row: 3/4;
-    padding: 20px;
+    margin-top: 70px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
-    padding-top: 40px;
     align-content: center;
     @media ${device.tablet} {
-        padding-top: 70px;
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(8, auto);
         grid-template-rows: 1fr 1fr;
+        justify-items: center;
     }
-`;
-
-const Row1 = styled.div`
-    grid-column: 1/2;
-    grid-row: 1/2;
+    @media ${device.laptopL} {
+    }
 `;
 
 export default function AboutIcons() {

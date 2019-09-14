@@ -11,23 +11,14 @@ import theme from './theme';
 const Root = styled.div`
     color: ${props => props.theme.textPrimary};
     font-family: 'Montserrat', sans-serif;
-    height: 100vh;
-    width: 100vw;
     background-color: ${props => props.theme.background};
-`;
-
-const Content = styled.div`
     display: grid;
-    padding: 1rem;
-    height: 92vh;
-    grid-template-areas: 'main';
-    grid-template-rows: 1fr;
+    grid-template-rows: 60px auto;
     grid-template-columns: 1fr;
     align-items: center;
     justify-items: center;
+    min-height: 100vh;
     overflow-x: hidden;
-    overflow-y: visible;
-    z-index: 500;
 `;
 
 function App() {
@@ -39,25 +30,18 @@ function App() {
         from: { opacity: 0, transform: 'translate3d(100%, 0, 0)' },
         enter: { opacity: 1, transform: 'translate3d(0%, 0, 0)' },
         leave: { opacity: 0, transform: 'translate3d(-50%, 0, 0)' },
-        config: config.slow
+        config: config.default
     });
-    /*
-    return transitions.map(({ item, key, props }) =>
-        item ? <animated.div style={props}>😄</animated.div> : <animated.div style={props}>🤪</animated.div>
-    );
-    */
     return (
         <AppContext.Provider value={{ state, dispatch }}>
             <ThemeProvider theme={theme}>
                 <Root className="App">
                     <Menu></Menu>
                     <Navbar></Navbar>
-                    <Content>
-                        {transitions.map(({ item, key, props }) => {
-                            const Page = items.filter(it => it.id === item)[0].component;
-                            return <Page style={props} key={key}></Page>;
-                        })}
-                    </Content>
+                    {transitions.map(({ item, key, props }) => {
+                        const Page = items.filter(it => it.id === item)[0].component;
+                        return <Page style={props} key={key}></Page>;
+                    })}
                 </Root>
             </ThemeProvider>
         </AppContext.Provider>

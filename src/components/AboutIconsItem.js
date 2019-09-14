@@ -7,13 +7,13 @@ import device from '../mediaqueries';
 
 const Root = styled.div`
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px;
+    max-width: 100px;
     @media ${device.laptop} {
-        padding: 40px;
     }
 `;
 

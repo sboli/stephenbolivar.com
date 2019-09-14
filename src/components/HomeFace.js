@@ -13,11 +13,16 @@ const FaceImgStyle = styled.img`
     width: auto;
     border-radius: 50%;
     box-shadow: 0 0 0 15px hsl(0, 0%, 85%), 0 0 0 30px hsl(0, 0%, 95%);
+    @media ${device.mobileS} {
+        max-width: 50%;
+    }
+
     @media ${device.tablet} {
         grid-column: 2;
+        max-width: 80%;
         grid-row: 2/5;
         height: 75%;
-        justify-self: left;
+        justify-self: center;
     }
 `;
 

@@ -6,6 +6,9 @@ import device from '../mediaqueries';
 import Icon from './Icon';
 
 const Root = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
     @media ${device.mobileS} {
         width: 100%;
         display: block;

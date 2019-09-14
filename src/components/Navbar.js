@@ -9,6 +9,9 @@ import items from '../menu-items';
 const TopMenu = styled.div`
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    grid-row: 1/2;
+    grid-column: 1/2;
     @media ${device.mobileS} {
         display: none;
     }

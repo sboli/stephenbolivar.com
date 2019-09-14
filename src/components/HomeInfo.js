@@ -19,14 +19,10 @@ const Root = styled.div`
         grid-column: 1;
         grid-row: 2/5;
         align-self: center;
-        justify-self: end;
-        padding-top: 3rem;
-        margin-right: 5rem;
-        margin-top: 0rem;
-        padding-left: 2rem;
+        justify-self: center;
     }
     @media ${device.laptop} {
-        margin-right: 10rem;
+        font-size: 1.33em;
     }
 `;
 

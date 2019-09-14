@@ -16,17 +16,16 @@ const Image = styled.img`
     height: auto;
     margin-left: auto;
     margin-right: auto;
+    padding: 20px;
     @media ${device.mobileS} {
         max-width: 100%;
-        padding: 20px;
     }
     @media ${device.mobileL} {
-        padding: 40px;
         max-width: 80%;
     }
     @media ${device.tablet} {
-        padding: 70px;
         max-width: 100%;
+        max-height: 250px;
     }
 `;
 

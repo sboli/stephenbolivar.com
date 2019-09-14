@@ -16,7 +16,7 @@ const items = [
     {
         id: 'skills',
         title: 'Compétences',
-        component: 'Skills'
+        component: Skills
     },
     {
         id: 'experiences',

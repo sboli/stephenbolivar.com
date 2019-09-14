@@ -6,6 +6,8 @@ const Root = styled.div`
     grid-column: 1/3;
     grid-row: 2/3;
     padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     align-self: start;
     @media ${device.tablet} {
         grid-column: 2/3;

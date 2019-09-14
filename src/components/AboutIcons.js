@@ -22,7 +22,6 @@ import AboutIconsItem from './AboutIconsItem';
 const Root = styled.div`
     grid-column: 1/3;
     grid-row: 3/4;
-    margin-top: 70px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
@@ -33,6 +32,7 @@ const Root = styled.div`
         justify-items: center;
     }
     @media ${device.laptopL} {
+        margin-top: 70px;
     }
 `;
 

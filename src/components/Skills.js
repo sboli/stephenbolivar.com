@@ -22,7 +22,8 @@ const Technical = styled(animated.div)`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
     @media ${device.tablet} {
-        grid-gap: 2rem;
+        grid-column-gap: 4rem;
+        grid-row-gap: 1rem;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, 1fr);
     }

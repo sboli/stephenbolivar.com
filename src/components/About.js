@@ -1,5 +1,5 @@
 import React from 'react';
-import { animated } from 'react-spring';
+import { animated, useSpring, config } from 'react-spring';
 import styled from 'styled-components';
 import AboutImage from './AboutImage';
 import AboutText from './AboutText';
@@ -24,14 +24,20 @@ const Root = styled(animated.div)`
     @media ${device.laptopL} {
         width: 75%;
     }
+    overflow-y: hidden;
 `;
 
 export default function About({ style }) {
+    const iconsStyle = useSpring({
+        from: { transform: 'translate3d(0, 100px, 0', opacity: 0 },
+        to: { transform: 'translate3d(0, 0, 0', opacity: 1 },
+        config: config.slow
+    });
     return (
         <Root style={style}>
             <AboutImage></AboutImage>
             <AboutText></AboutText>
-            <AboutIcons></AboutIcons>
+            <AboutIcons style={iconsStyle}></AboutIcons>
         </Root>
     );
 }

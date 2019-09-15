@@ -18,8 +18,9 @@ import git from 'simple-icons/icons/git';
 import grafana from 'simple-icons/icons/grafana';
 import docker from 'simple-icons/icons/docker';
 import AboutIconsItem from './AboutIconsItem';
+import { animated } from 'react-spring';
 
-const Root = styled.div`
+const Root = styled(animated.div)`
     grid-column: 1/3;
     grid-row: 3/4;
     display: grid;
@@ -30,13 +31,13 @@ const Root = styled.div`
         grid-template-columns: repeat(8, auto);
         grid-template-rows: 1fr 1fr;
         justify-items: center;
+        margin-top: 70px;
     }
     @media ${device.laptopL} {
-        margin-top: 70px;
     }
 `;
 
-export default function AboutIcons() {
+export default function AboutIcons({ style }) {
     const [stack, setStack] = useState([
         react,
         vue,
@@ -56,7 +57,7 @@ export default function AboutIcons() {
         docker
     ]);
     return (
-        <Root>
+        <Root style={style}>
             {stack.map(it => (
                 <AboutIconsItem key={it.title} title={it.title} svg={it.svg} url={it.url}></AboutIconsItem>
             ))}

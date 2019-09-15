@@ -33,6 +33,7 @@ export default [
             <ul>
             <li>Création d'une API en Java pour la communication avec l'OCS Ericsson</li>
             <li>Maintenance et évolution d'un webservice chargé de consolider des consommations en vue de réaliser un suivi conso  </li>
+            <li>Développement de plusieurs applications métier en PHP / Jquery / Mysql.</li>
             </ul>
             </p>
         `

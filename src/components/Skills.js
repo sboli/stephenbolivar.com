@@ -1,8 +1,9 @@
 import React from 'react';
 import device from '../mediaqueries';
-import { animated } from 'react-spring';
+import { animated, useTrail, config } from 'react-spring';
 import styled from 'styled-components';
 import ProgressBar from './ProgressBar';
+import Pie from './Pie';
 
 const Root = styled(animated.div)`
     grid-column: 1/2;
@@ -31,10 +32,15 @@ const Technical = styled(animated.div)`
 
 const Professional = styled(animated.div)`
     display: grid;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2rem;
     @media ${device.tablet} {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
     }
 `;
 
@@ -52,7 +58,12 @@ export default function Skills({ style }) {
             </Technical>
 
             <h2 style={{ marginBottom: '2rem', marginTop: '5rem' }}>Compétences professionnelles</h2>
-            <Professional></Professional>
+            <Professional>
+                <Pie title="Travail en  équipe" progress={0.9}></Pie>
+                <Pie title="Gestion  de projet" progress={0.8}></Pie>
+                <Pie title="Résolution de problèmes" progress={0.9}></Pie>
+                <Pie title="Sens artistique" progress={0.6}></Pie>
+            </Professional>
         </Root>
     );
 }

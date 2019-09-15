@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { device } from '../mediaqueries';
@@ -41,8 +41,36 @@ const Duration = styled.div`
     font-size: 0.8em;
 `;
 
-export default function ExperiencesMission({ title, company, yearStart, yearEnd, htmlContent }) {
-    const duration = 'Some time';
+const computeDuration = (start, end) => {
+    const months = [
+        'Janvier',
+        'Février',
+        'Mars',
+        'Avril',
+        'Mai',
+        'Juin',
+        'Juillet',
+        'Août',
+        'Septembre',
+        'Octobre',
+        'Novembre',
+        'Décembre'
+    ];
+    const splittedStart = start.indexOf('-') > 0 ? start.split('-') : [undefined, start];
+    const startString = (splittedStart[0] ? months[parseInt(splittedStart[0]) - 1] : '') + ' ' + splittedStart[1];
+
+    const splittedEnd = end && end.indexOf('-') > 0 ? end.split('-') : undefined;
+    const endString = splittedEnd ? months[parseInt(splittedEnd[0]) - 1] + ' ' + splittedEnd[1] : 'Ce jour';
+    return startString + ' - ' + endString;
+};
+
+export default function ExperiencesMission({ title, company, start, end, htmlContent }) {
+    const [duration, setDuration] = useState(computeDuration(start, end));
+
+    useEffect(() => {
+        setDuration(computeDuration(start, end));
+    }, [start, end]);
+
     return (
         <Root>
             <h3>{title}</h3>

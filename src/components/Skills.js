@@ -33,14 +33,14 @@ const Technical = styled(animated.div)`
 const Professional = styled(animated.div)`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
     justify-items: center;
     justify-content: center;
     align-content: center;
     grid-gap: 2rem;
     @media ${device.tablet} {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(1, 1fr);
+        grid-template-rows: 1fr;
     }
 `;
 

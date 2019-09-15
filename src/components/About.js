@@ -25,6 +25,10 @@ const Root = styled(animated.div)`
         width: 75%;
     }
     overflow-y: hidden;
+    align-self: start;
+    @media ${device.tablet} {
+        margin-top: 15vh;
+    }
 `;
 
 export default function About({ style }) {

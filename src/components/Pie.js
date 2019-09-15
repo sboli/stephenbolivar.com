@@ -20,8 +20,7 @@ export default function Pie({ title, progress }) {
     const props = useSpring({
         to: { transform: `rotate(${1 - progress}turn)` },
         from: { transform: `rotate(1turn)` },
-        config: config.slow,
-        onFrame: f => console.log(f)
+        config: config.slow
     });
     const Progress = styled(animated.div)`
         margin-left: auto;

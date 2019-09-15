@@ -38,7 +38,7 @@ const Root = styled.div`
 
 export default function AboutIcons() {
     const [stack, setStack] = useState([
-        { ...react, title: 'ReactJS', url: 'https://reactjs.org/' },
+        react,
         vue,
         sass,
         graphql,

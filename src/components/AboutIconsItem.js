@@ -38,9 +38,12 @@ function AboutIconsItem({ title, svg, url }) {
         transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
         config: { mass: 5, tension: 300, friction: 60 }
     });
-    const toggle = () => set(state => !state);
+    const toggle = () => {
+        set(true);
+        setTimeout(() => set(false), 3000);
+    };
     return (
-        <Root onMouseEnter={toggle} onMouseLeave={toggle} onClick={toggle}>
+        <Root onMouseEnter={toggle} onClick={toggle}>
             <AnimatedInfo style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }}>
                 <strong>{title}</strong>
             </AnimatedInfo>
@@ -54,8 +57,7 @@ function AboutIconsItem({ title, svg, url }) {
 
 AboutIconsItem.propTypes = {
     title: PropTypes.string.isRequired,
-    svg: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    svg: PropTypes.string.isRequired
 };
 
 export default AboutIconsItem;

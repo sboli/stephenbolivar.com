@@ -16,6 +16,10 @@ const Root = styled(animated.div)`
         max-width: 70%;
     }
     padding: 1rem;
+    align-self: start;
+    @media ${device.tablet} {
+        margin-top: 10vh;
+    }
 `;
 
 const Technical = styled(animated.div)`

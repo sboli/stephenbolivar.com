@@ -1,6 +1,8 @@
 import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
+import Experiences from './components/Experiences';
+import Portfolio from './components/Portfolio';
 
 const items = [
     {
@@ -20,11 +22,13 @@ const items = [
     },
     {
         id: 'experiences',
-        title: 'Expériences'
+        title: 'Expériences',
+        component: Experiences
     },
     {
         id: 'portfolio',
-        title: 'Portfolio'
+        title: 'Portfolio',
+        component: Portfolio
     }
 ];
 

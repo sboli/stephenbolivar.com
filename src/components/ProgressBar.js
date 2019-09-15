@@ -55,10 +55,10 @@ export default function ProgressBar({ title, progress }) {
     return (
         <Root>
             <Info>
-                <div style={{ textAlign: 'left', fontWeight: 'bold', marginBottom: 2 }}>{title}</div>
-                <div style={{ textAlign: 'right', fontSize: '.8rem', color: theme.textSecondary, marginBottom: 2 }}>
+                <h4 style={{ textAlign: 'left', fontWeight: 'bold', marginBottom: 2 }}>{title}</h4>
+                <span style={{ textAlign: 'right', fontSize: '.8rem', color: theme.textSecondary, marginBottom: 2 }}>
                     {level}
-                </div>
+                </span>
             </Info>
             <Background>
                 <Progress progress={progress}></Progress>

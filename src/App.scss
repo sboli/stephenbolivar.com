@@ -3,3 +3,7 @@ $hamburger-padding-x: 20px;
 $hamburger-padding-y: 20px;
 
 @import '~hamburgers/_sass/hamburgers/hamburgers.scss';
+
+li {
+    margin-left: 1rem;
+}

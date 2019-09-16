@@ -27,7 +27,7 @@ const Root = styled(animated.div)`
 `;
 
 const MissionsTitle = styled(animated.h1)`
-    grid-column: 1/2;
+    grid-column: 1/3;
     grid-row: 1/2;
     margin-top: 2rem;
 `;
@@ -36,24 +36,29 @@ const Missions = styled(animated.div)`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fill, auto);
-    grid-gap: 2rem;
-    grid-column: 1/2;
+    grid-gap: 3rem;
+    grid-column: 1/3;
     grid-row: 2/3;
+    @media ${device.tablet} {
+        grid-template-columns: 1fr 1fr;
+    }
+    align-content: start;
+    align-items: start;
 `;
 
 const EducationTitle = styled.h1`
-    @media ${device.laptop} {
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
+    grid-column: 1/3;
+    grid-row: 3/4;
     margin-top: 2rem;
 `;
 
 const Education = styled(animated.div)`
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto-fill, auto);
-    grid-gap: 2rem;
+    grid-gap: 3rem;
+    grid-column: 1/3;
+    justify-self: center;
 `;
 
 export default function Experiences({ style }) {

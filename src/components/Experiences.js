@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { animated } from 'react-spring';
+import { animated, useSpring, config } from 'react-spring';
 import { device } from '../mediaqueries';
 import ExperiencesMission from './ExperiencesMission';
 import missions from '../missions';
@@ -30,15 +30,18 @@ const MissionsTitle = styled(animated.h1)`
     grid-column: 1/3;
     grid-row: 1/2;
     margin-top: 2rem;
+    display: block;
+    border-bottom: 4px solid lightgray;
 `;
 
 const Missions = styled(animated.div)`
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fill, auto);
     grid-gap: 3rem;
     grid-column: 1/3;
     grid-row: 2/3;
+    grid-template-columns: 1fr;
+
     @media ${device.tablet} {
         grid-template-columns: 1fr 1fr;
     }
@@ -46,15 +49,21 @@ const Missions = styled(animated.div)`
     align-items: start;
 `;
 
-const EducationTitle = styled.h1`
+const EducationTitle = styled(animated.h1)`
     grid-column: 1/3;
     grid-row: 3/4;
     margin-top: 2rem;
+    display: block;
+    border-bottom: 4px solid lightgray;
 `;
 
 const Education = styled(animated.div)`
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media ${device.tablet} {
+        grid-template-columns: 1fr 1fr;
+    }
     grid-template-rows: repeat(auto-fill, auto);
     grid-gap: 3rem;
     grid-column: 1/3;
@@ -62,15 +71,28 @@ const Education = styled(animated.div)`
 `;
 
 export default function Experiences({ style }) {
+    const titleStyle = useSpring({
+        from: {
+            transform: 'translate3d(-100px, 0, 0)',
+            opacity: 0,
+            width: '10%'
+        },
+        to: {
+            transform: 'translate3d(0, 0, 0)',
+            opacity: 1,
+            width: '100%'
+        },
+        config: config.molasses
+    });
     return (
         <Root style={style}>
-            <MissionsTitle>Missions</MissionsTitle>
+            <MissionsTitle style={titleStyle}>Missions</MissionsTitle>
             <Missions>
                 {missions.map(it => (
                     <ExperiencesMission {...it}></ExperiencesMission>
                 ))}
             </Missions>
-            <EducationTitle>Éducation</EducationTitle>
+            <EducationTitle style={titleStyle}>Éducation</EducationTitle>
             <Education>
                 {education.map(it => (
                     <ExperiencesEducation {...it}></ExperiencesEducation>

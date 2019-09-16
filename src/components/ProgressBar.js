@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import devices from '../mediaqueries';
 import theme from '../theme';
 import { animated, useSpring, config } from 'react-spring';
 
 const Progress = ({ progress }) => {
-    const Root = styled(animated.div)`
+    const Root = styled.div`
         height: 100%;
         width: ${progress * 100 + '%'};
         background-color: ${props => props.theme.primary};
         border-radius: inherit;
     `;
-    const props = useSpring({
-        from: {
-            width: '0%'
-        },
-        to: {
-            width: progress * 100 + '%'
-        },
-        config: config.slow
-    });
-    return <Root style={props}></Root>;
+
+    return <Root></Root>;
 };
 
 const Root = styled.div`

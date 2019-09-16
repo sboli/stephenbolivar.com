@@ -15,7 +15,7 @@ const Progress = ({ progress }) => {
     return <Root></Root>;
 };
 
-const Root = styled.div`
+const Root = styled(animated.div)`
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -39,13 +39,13 @@ const Info = styled.div`
     justify-items: space-between;
 `;
 
-export default function ProgressBar({ title, progress }) {
+export default function ProgressBar({ title, progress, style }) {
     let level = 'Bon';
     if (progress >= 0.7) level = 'Plutôt bon';
     if (progress >= 0.8) level = 'Très bon';
     if (progress >= 0.9) level = 'Excellent';
     return (
-        <Root>
+        <Root style={style}>
             <Info>
                 <h4 style={{ textAlign: 'left', fontWeight: 'bold', marginBottom: 2 }}>{title}</h4>
                 <span style={{ textAlign: 'right', fontSize: '.8rem', color: theme.textSecondary, marginBottom: 2 }}>

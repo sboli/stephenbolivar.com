@@ -16,7 +16,7 @@ const Title = styled.h4`
     min-height: 2.5rem;
 `;
 
-export default function Pie({ title, progress }) {
+export default function Pie({ title, progress, style }) {
     const Progress = styled(animated.div)`
         margin-left: auto;
         margin-right: auto;
@@ -37,7 +37,7 @@ export default function Pie({ title, progress }) {
         background-image: linear-gradient(to right, transparent 100%, lightgray 0);
     `;
     return (
-        <Root>
+        <Root style={style}>
             <Title>{title}</Title>
             <Progress>
                 <ProgressPie style={{ transform: `rotate(${1 - progress}turn)` }}></ProgressPie>

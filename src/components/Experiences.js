@@ -4,6 +4,8 @@ import { animated } from 'react-spring';
 import { device } from '../mediaqueries';
 import ExperiencesMission from './ExperiencesMission';
 import missions from '../missions';
+import education from '../education';
+import ExperiencesEducation from './ExperiencesEducation';
 
 const Root = styled(animated.div)`
     grid-column: 1/2;
@@ -21,6 +23,7 @@ const Root = styled(animated.div)`
     }
     padding: 1rem;
     grid-gap: 2rem;
+    grid-column-gap: 4rem;
 `;
 
 const MissionsTitle = styled(animated.h1)`
@@ -49,13 +52,8 @@ const EducationTitle = styled.h1`
 const Education = styled(animated.div)`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
-    @media ${device.laptop} {
-        grid-column-gap: 4rem;
-        grid-row-gap: 1rem;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(3, 1fr);
-    }
+    grid-template-rows: repeat(auto-fill, auto);
+    grid-gap: 2rem;
 `;
 
 export default function Experiences({ style }) {
@@ -68,7 +66,11 @@ export default function Experiences({ style }) {
                 ))}
             </Missions>
             <EducationTitle>Éducation</EducationTitle>
-            <Education></Education>
+            <Education>
+                {education.map(it => (
+                    <ExperiencesEducation {...it}></ExperiencesEducation>
+                ))}
+            </Education>
         </Root>
     );
 }

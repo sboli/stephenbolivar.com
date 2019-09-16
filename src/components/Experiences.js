@@ -30,8 +30,6 @@ const MissionsTitle = styled(animated.h1)`
     grid-column: 1/3;
     grid-row: 1/2;
     margin-top: 2rem;
-    display: block;
-    border-bottom: 4px solid lightgray;
 `;
 
 const Missions = styled(animated.div)`
@@ -53,8 +51,6 @@ const EducationTitle = styled(animated.h1)`
     grid-column: 1/3;
     grid-row: 3/4;
     margin-top: 2rem;
-    display: block;
-    border-bottom: 4px solid lightgray;
 `;
 
 const Education = styled(animated.div)`
@@ -89,13 +85,13 @@ export default function Experiences({ style }) {
             <MissionsTitle style={titleStyle}>Missions</MissionsTitle>
             <Missions>
                 {missions.map(it => (
-                    <ExperiencesMission {...it}></ExperiencesMission>
+                    <ExperiencesMission key={it.title} {...it}></ExperiencesMission>
                 ))}
             </Missions>
             <EducationTitle style={titleStyle}>Éducation</EducationTitle>
             <Education>
                 {education.map(it => (
-                    <ExperiencesEducation {...it}></ExperiencesEducation>
+                    <ExperiencesEducation key={it.title} {...it}></ExperiencesEducation>
                 ))}
             </Education>
         </Root>

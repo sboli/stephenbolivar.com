@@ -5,7 +5,7 @@ import theme from '../theme';
 import { useSpring, animated as a } from 'react-spring';
 import device from '../mediaqueries';
 
-const Root = styled.div`
+const Root = styled(a.div)`
     width: 100%;
     height: auto;
     display: flex;
@@ -31,7 +31,7 @@ const Info = styled.div`
 `;
 const AnimatedInfo = a(Info);
 
-function AboutIconsItem({ title, svg, url }) {
+function AboutIconsItem({ title, svg, url, style }) {
     const [flipped, set] = useState(false);
     const { transform, opacity } = useSpring({
         opacity: flipped ? 1 : 0,
@@ -43,7 +43,7 @@ function AboutIconsItem({ title, svg, url }) {
         setTimeout(() => set(false), 3000);
     };
     return (
-        <Root onMouseEnter={toggle} onClick={toggle}>
+        <Root style={style} onMouseEnter={toggle} onClick={toggle}>
             <AnimatedInfo style={{ opacity, transform: transform.interpolate(t => `${t} rotateX(180deg)`) }}>
                 <strong>{title}</strong>
             </AnimatedInfo>

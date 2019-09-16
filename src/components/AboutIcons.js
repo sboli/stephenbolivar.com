@@ -18,7 +18,7 @@ import git from 'simple-icons/icons/git';
 import grafana from 'simple-icons/icons/grafana';
 import docker from 'simple-icons/icons/docker';
 import AboutIconsItem from './AboutIconsItem';
-import { animated } from 'react-spring';
+import { animated, useSprings, config, useTrail } from 'react-spring';
 
 const Root = styled(animated.div)`
     grid-column: 1/3;
@@ -56,11 +56,25 @@ export default function AboutIcons({ style }) {
         grafana,
         docker
     ]);
+    const springs = useTrail(stack.length, {
+        from: { opacity: 0, transform: 'translate3d(-20px, 40px, 0)' },
+        to: { opacity: 1, transform: 'translate3d(0px, 0, 0)' },
+        config: config.stiff
+    });
     return (
         <Root style={style}>
-            {stack.map(it => (
-                <AboutIconsItem key={it.title} title={it.title} svg={it.svg} url={it.url}></AboutIconsItem>
-            ))}
+            {springs.map((props, index) => {
+                const it = stack[index];
+                return (
+                    <AboutIconsItem
+                        style={props}
+                        key={it.title}
+                        title={it.title}
+                        svg={it.svg}
+                        url={it.url}
+                    ></AboutIconsItem>
+                );
+            })}
         </Root>
     );
 }

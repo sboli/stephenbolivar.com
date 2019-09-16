@@ -78,7 +78,7 @@ export default function Experiences({ style }) {
             opacity: 1,
             width: '100%'
         },
-        config: config.molasses
+        config: config.slow
     });
     return (
         <Root style={style}>

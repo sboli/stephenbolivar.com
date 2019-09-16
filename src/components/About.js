@@ -35,7 +35,7 @@ export default function About({ style }) {
     const iconsStyle = useSpring({
         from: { transform: 'translate3d(0, 100px, 0', opacity: 0 },
         to: { transform: 'translate3d(0, 0, 0', opacity: 1 },
-        config: config.molasses
+        config: config.slow
     });
     return (
         <Root style={style}>

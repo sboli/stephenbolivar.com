@@ -2,6 +2,7 @@ import React from 'react';
 import { animated } from 'react-spring';
 import styled from 'styled-components';
 import { device } from '../mediaqueries';
+import { face } from '../home';
 
 const FaceImgStyle = styled.img`
     grid-column: 1/3;
@@ -29,5 +30,5 @@ const FaceImgStyle = styled.img`
 const FaceImg = animated(FaceImgStyle);
 
 export default function HomeFace({ style }) {
-    return <FaceImg style={style} src="/images/face.jpg"></FaceImg>;
+    return <FaceImg style={style} src={face}></FaceImg>;
 }

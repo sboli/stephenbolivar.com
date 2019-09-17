@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import HomeInfoContact from './HomeInfoContact';
 import { device } from '../mediaqueries';
 import { animated } from 'react-spring';
+import { info } from '../home';
 
 const Root = styled(animated.div)`
     grid-column: 1/3;
@@ -30,14 +31,10 @@ const Root = styled(animated.div)`
 export default function HomeTitle({ style }) {
     return (
         <Root style={style}>
-            <h1>Stephen BOLIVAR</h1>
-            <h3>Développeur fullstack</h3>
-            <HomeInfoContact icon="phone" text="+590 690 86 19 09" href="tel:+590690861909"></HomeInfoContact>
-            <HomeInfoContact
-                icon="mail"
-                text="hello@stephenbolivar.com"
-                href="mailto:hello@stephenbolivar.com"
-            ></HomeInfoContact>
+            <h1>{info.name}</h1>
+            <h3>{info.title}</h3>
+            <HomeInfoContact icon="phone" text={info.prettyPhone} href={info.phone}></HomeInfoContact>
+            <HomeInfoContact icon="mail" text={info.mail} href={`mailto:${info.mail}`}></HomeInfoContact>
         </Root>
     );
 }

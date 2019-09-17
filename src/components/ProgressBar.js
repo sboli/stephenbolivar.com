@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import { animated } from 'react-spring';
 import styled from 'styled-components';
 import devices from '../mediaqueries';
 import theme from '../theme';
-import { animated, useSpring, config } from 'react-spring';
 
 const Progress = ({ progress }) => {
     const Root = styled.div`

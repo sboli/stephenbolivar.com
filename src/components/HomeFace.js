@@ -1,6 +1,6 @@
 import React from 'react';
+import { animated } from 'react-spring';
 import styled from 'styled-components';
-import { useSpring, animated, config } from 'react-spring';
 import { device } from '../mediaqueries';
 
 const FaceImgStyle = styled.img`

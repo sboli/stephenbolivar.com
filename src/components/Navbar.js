@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import NavbarItem from './NavbarItem';
-import device from '../mediaqueries';
-import MenuButton from './MenuButton';
 import AppContext from '../context';
+import device from '../mediaqueries';
 import items from '../menu-items';
+import MenuButton from './MenuButton';
+import NavbarItem from './NavbarItem';
 
 const TopMenu = styled.div`
     margin-left: auto;

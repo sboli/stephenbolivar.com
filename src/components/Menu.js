@@ -1,10 +1,10 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { animated, config, useSpring, useTransition } from 'react-spring';
 import styled from 'styled-components';
 import AppContext from '../context';
-import { useSpring, animated, config, useChain, useTransition } from 'react-spring';
+import items from '../menu-items';
 import MenuButtonExit from './MenuButtonExit';
 import MenuRow from './MenuRow';
-import items from '../menu-items';
 const Root = styled(animated.div)`
     color: ${props => props.theme.textPrimary};
     position: absolute;
@@ -32,8 +32,6 @@ const Backdrop = styled(animated.div)`
     z-index: 98;
     background-color: rgba(0, 0, 0, 0.7);
 `;
-
-const AnimatedMenuRow = animated(MenuRow);
 
 export default function Menu() {
     const { state, dispatch } = useContext(AppContext);

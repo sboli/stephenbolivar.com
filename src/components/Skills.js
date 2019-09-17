@@ -1,9 +1,9 @@
 import React from 'react';
-import device from '../mediaqueries';
-import { animated, useTrail, config, useSpring } from 'react-spring';
+import { animated, config, useTrail } from 'react-spring';
 import styled from 'styled-components';
-import ProgressBar from './ProgressBar';
+import device from '../mediaqueries';
 import Pie from './Pie';
+import ProgressBar from './ProgressBar';
 
 const Root = styled(animated.div)`
     grid-column: 1/2;

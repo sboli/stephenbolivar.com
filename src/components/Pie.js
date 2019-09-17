@@ -1,7 +1,7 @@
 import React from 'react';
+import { animated } from 'react-spring';
 import styled from 'styled-components';
 import theme from '../theme';
-import { useSpring, animated, config } from 'react-spring';
 
 const Root = styled(animated.div)`
     width: 160px;

@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { animated, config, useTrail } from 'react-spring';
 import styled from 'styled-components';
-import { animated, useSpring, config, useTrail, useChain } from 'react-spring';
-import { device } from '../mediaqueries';
-import ExperiencesMission from './ExperiencesMission';
-import missions from '../missions';
 import education from '../education';
+import { device } from '../mediaqueries';
+import missions from '../missions';
 import ExperiencesEducation from './ExperiencesEducation';
+import ExperiencesMission from './ExperiencesMission';
 
 const Root = styled(animated.div)`
     grid-column: 1/2;

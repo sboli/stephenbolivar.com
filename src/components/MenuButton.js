@@ -1,6 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import AppContext from '../context';
 import device from '../mediaqueries';
 import Icon from './Icon';
@@ -35,7 +34,7 @@ const StyledButton = styled.button`
 `;
 
 export default function MenuButton() {
-    const { state, dispatch } = useContext(AppContext);
+    const { dispatch } = useContext(AppContext);
 
     return (
         <Root>

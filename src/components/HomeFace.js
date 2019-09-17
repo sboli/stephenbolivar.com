@@ -2,7 +2,7 @@ import React from 'react';
 import { animated } from 'react-spring';
 import styled from 'styled-components';
 import { device } from '../mediaqueries';
-import { face } from '../home';
+import { face } from '../data/home';
 
 const FaceImgStyle = styled.img`
     grid-column: 1/3;

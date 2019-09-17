@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import device from '../mediaqueries';
-import about from '../about';
+import about from '../data/about';
 
 const Root = styled.div`
     grid-column: 1/3;

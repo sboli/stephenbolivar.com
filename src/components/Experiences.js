@@ -1,9 +1,9 @@
 import React from 'react';
 import { animated, config, useTrail } from 'react-spring';
 import styled from 'styled-components';
-import education from '../education';
+import education from '../data/education';
 import { device } from '../mediaqueries';
-import missions from '../missions';
+import missions from '../data/missions';
 import ExperiencesEducation from './ExperiencesEducation';
 import ExperiencesMission from './ExperiencesMission';
 

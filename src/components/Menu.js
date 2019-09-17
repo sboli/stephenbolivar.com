@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { animated, config, useSpring, useTransition } from 'react-spring';
 import styled from 'styled-components';
 import AppContext from '../context';
-import items from '../menu-items';
+import items from '../data/menu-items';
 import MenuButtonExit from './MenuButtonExit';
 import MenuRow from './MenuRow';
 const Root = styled(animated.div)`

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import AppContext from '../context';
 import device from '../mediaqueries';
-import items from '../menu-items';
+import items from '../data/menu-items';
 import MenuButton from './MenuButton';
 import NavbarItem from './NavbarItem';
 

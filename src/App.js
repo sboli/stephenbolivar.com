@@ -5,7 +5,7 @@ import './App.scss';
 import Menu from './components/Menu';
 import Navbar from './components/Navbar';
 import AppContext, { appReducer } from './context';
-import items from './menu-items';
+import items from './data/menu-items';
 import theme from './theme';
 
 const Root = styled.div`

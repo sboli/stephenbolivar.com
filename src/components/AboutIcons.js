@@ -1,7 +1,7 @@
 import React from 'react';
 import { animated, config, useTrail } from 'react-spring';
 import styled from 'styled-components';
-import about from '../about';
+import about from '../data/about';
 import device from '../mediaqueries';
 import AboutIconsItem from './AboutIconsItem';
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import HomeInfoContact from './HomeInfoContact';
 import { device } from '../mediaqueries';
 import { animated } from 'react-spring';
-import { info } from '../home';
+import { info } from '../data/home';
 
 const Root = styled(animated.div)`
     grid-column: 1/3;

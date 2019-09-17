@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import device from '../mediaqueries';
 import Pie from './Pie';
 import ProgressBar from './ProgressBar';
-import { technical, professional } from '../skills';
+import { technical, professional } from '../data/skills';
 
 const Root = styled(animated.div)`
     grid-column: 1/2;

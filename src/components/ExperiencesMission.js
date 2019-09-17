@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { device } from '../mediaqueries';
+import { animated } from 'react-spring';
 
-const Root = styled.div`
+const Root = styled(animated.div)`
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr;
@@ -64,7 +65,7 @@ const computeDuration = (start, end) => {
     return startString + ' - ' + endString;
 };
 
-export default function ExperiencesMission({ title, company, start, end, htmlContent }) {
+export default function ExperiencesMission({ style, title, company, start, end, htmlContent }) {
     const [duration, setDuration] = useState(computeDuration(start, end));
 
     useEffect(() => {
@@ -72,7 +73,7 @@ export default function ExperiencesMission({ title, company, start, end, htmlCon
     }, [start, end]);
 
     return (
-        <Root>
+        <Root style={style}>
             <h3>{title}</h3>
             <SecondRow>
                 {company.logoUrl ? <CompanyLogo src={company.logoUrl}></CompanyLogo> : <div></div>}

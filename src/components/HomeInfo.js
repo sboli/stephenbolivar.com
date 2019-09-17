@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import HomeInfoContact from './HomeInfoContact';
 import { device } from '../mediaqueries';
+import { animated } from 'react-spring';
 
-const Root = styled.div`
+const Root = styled(animated.div)`
     grid-column: 1/3;
     grid-row: 4;
     justify-content: right;
@@ -26,9 +27,9 @@ const Root = styled.div`
     }
 `;
 
-export default function HomeTitle() {
+export default function HomeTitle({ style }) {
     return (
-        <Root>
+        <Root style={style}>
             <h1>Stephen BOLIVAR</h1>
             <h3>Développeur fullstack</h3>
             <HomeInfoContact icon="phone" text="+590 690 86 19 09" href="tel:+590690861909"></HomeInfoContact>

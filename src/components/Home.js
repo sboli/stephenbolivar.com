@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import HomeFace from './HomeFace';
 import HomeInfo from './HomeInfo';
-import { animated } from 'react-spring';
+import { animated, useSpring, config } from 'react-spring';
 
 const Root = styled(animated.div)`
     grid-row: 1/3;
@@ -17,10 +17,38 @@ const Root = styled(animated.div)`
 `;
 
 export default function Home({ style }) {
+    const [firstDraw, setFirstDraw] = useState(true);
+    const faceStyle = useSpring({
+        from: {
+            transform: 'translate3d(100px, 0, 0)',
+            opacity: 0
+        },
+        to: {
+            transform: 'translate3d(0, 0px, 0)',
+            opacity: 1
+        },
+        config: config.slow
+    });
+    const infoStyle = useSpring({
+        from: {
+            transform: 'translate3d(-100px, 0, 0)',
+            opacity: 0
+        },
+        to: {
+            transform: 'translate3d(0, 0px, 0)',
+            opacity: 1
+        },
+        config: config.default
+    });
+    useEffect(() => {
+        setTimeout(() => {
+            setFirstDraw(false);
+        }, 600);
+    }, []);
     return (
-        <Root style={style}>
-            <HomeFace></HomeFace>
-            <HomeInfo></HomeInfo>
+        <Root style={firstDraw ? {} : style}>
+            <HomeFace style={firstDraw ? faceStyle : {}}></HomeFace>
+            <HomeInfo style={firstDraw ? infoStyle : {}}></HomeInfo>
         </Root>
     );
 }

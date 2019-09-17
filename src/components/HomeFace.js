@@ -28,13 +28,6 @@ const FaceImgStyle = styled.img`
 
 const FaceImg = animated(FaceImgStyle);
 
-export default function HomeFace() {
-    const props = useSpring({
-        config: config.slow,
-        to: {
-            opacity: 1
-        },
-        from: { opacity: 0 }
-    });
-    return <FaceImg style={props} src="/images/face.jpg"></FaceImg>;
+export default function HomeFace({ style }) {
+    return <FaceImg style={style} src="/images/face.jpg"></FaceImg>;
 }

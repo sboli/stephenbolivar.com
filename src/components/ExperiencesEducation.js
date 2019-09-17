@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { animated } from 'react-spring';
 
-const Root = styled.div`
+const Root = styled(animated.div)`
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: 1fr;
@@ -19,9 +20,9 @@ const SecondRow = styled.div`
     justify-content: space-between;
 `;
 
-export default function ExperiencesEducation({ title, school, year, htmlContent }) {
+export default function ExperiencesEducation({ style, title, school, year, htmlContent }) {
     return (
-        <Root>
+        <Root style={style}>
             <h3>{title}</h3>
             <SecondRow>
                 <span>{school}</span>

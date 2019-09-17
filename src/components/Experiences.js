@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-import { animated, useSpring, config } from 'react-spring';
+import { animated, useSpring, config, useTrail, useChain } from 'react-spring';
 import { device } from '../mediaqueries';
 import ExperiencesMission from './ExperiencesMission';
 import missions from '../missions';
@@ -67,31 +67,29 @@ const Education = styled(animated.div)`
 `;
 
 export default function Experiences({ style }) {
-    const titleStyle = useSpring({
-        from: {
-            transform: 'translate3d(-100px, 0, 0)',
-            opacity: 0,
-            width: '10%'
-        },
-        to: {
-            transform: 'translate3d(0, 0, 0)',
-            opacity: 1,
-            width: '100%'
-        },
-        config: config.slow
+    const missionsStyle = useTrail(missions.length, {
+        from: { opacity: 0, transform: 'translate3d(-20px, 40px, 0)' },
+        to: { opacity: 1, transform: 'translate3d(0px, 0, 0)' },
+        config: config.stiff
+    });
+    const experiencesStyle = useTrail(education.length, {
+        from: { opacity: 0, transform: 'translate3d(-20px, 40px, 0)' },
+        to: { opacity: 1, transform: 'translate3d(0px, 0, 0)' },
+        config: config.stiff,
+        delay: 500
     });
     return (
         <Root style={style}>
-            <MissionsTitle style={titleStyle}>Missions</MissionsTitle>
+            <MissionsTitle>Missions</MissionsTitle>
             <Missions>
-                {missions.map(it => (
-                    <ExperiencesMission key={it.title} {...it}></ExperiencesMission>
+                {missions.map((it, index) => (
+                    <ExperiencesMission style={missionsStyle[index]} key={it.title} {...it}></ExperiencesMission>
                 ))}
             </Missions>
-            <EducationTitle style={titleStyle}>Éducation</EducationTitle>
+            <EducationTitle>Éducation</EducationTitle>
             <Education>
-                {education.map(it => (
-                    <ExperiencesEducation key={it.title} {...it}></ExperiencesEducation>
+                {education.map((it, index) => (
+                    <ExperiencesEducation style={experiencesStyle[index]} key={it.title} {...it}></ExperiencesEducation>
                 ))}
             </Education>
         </Root>

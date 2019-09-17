@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import HomeFace from './HomeFace';
 import HomeInfo from './HomeInfo';
 import { animated, useSpring, config } from 'react-spring';
+import { device } from '../mediaqueries';
 
 const Root = styled(animated.div)`
     grid-row: 1/3;
@@ -13,7 +14,10 @@ const Root = styled(animated.div)`
     grid-template-rows: 10% auto 5% 15% 15%;
     padding: 1rem;
     align-self: start;
-    margin-top: 25vh;
+    margin-top: 20vh;
+    @media ${device.tablet} {
+        margin-top: 25vh;
+    }
 `;
 
 export default function Home({ style }) {

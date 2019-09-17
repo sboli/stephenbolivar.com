@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import device from '../mediaqueries';
+import about from '../about';
 
 const Root = styled.div`
     grid-column: 1/3;
@@ -32,7 +33,7 @@ const Image = styled.img`
 export default function AboutImage() {
     return (
         <Root>
-            <Image src="/images/web_developer.svg" alt=""></Image>
+            <Image src={about.image} alt=""></Image>
         </Root>
     );
 }

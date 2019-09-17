@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import device from '../mediaqueries';
+import about from '../about';
 
 const Root = styled.div`
     grid-column: 1/3;
@@ -21,10 +22,5 @@ const Root = styled.div`
 `;
 
 export default function AboutText() {
-    return (
-        <Root>
-            Je suis Stephen, développeur particulièrement intéressé par les stack full Javascript ainsi que les
-            architectures microservices et serverless.
-        </Root>
-    );
+    return <Root>{about.htmlContent}</Root>;
 }

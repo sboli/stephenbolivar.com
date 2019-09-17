@@ -6,7 +6,7 @@ export default [
         htmlContent: 'Formation dispensé en entreprise.'
     },
     {
-        title: "Parcours Ingénieur systèmes d'informations",
+        title: 'Cours du soir',
         year: '2012',
         school: 'Conservatoire national des arts et des métiers',
         htmlContent: `

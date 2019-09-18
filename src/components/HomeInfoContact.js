@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import * as feather from 'feather-icons';
 import PropTypes from 'prop-types';
+import theme from '../theme';
 
 const Root = styled.div`
     display: flex;
@@ -22,7 +23,10 @@ const StyledA = styled.a`
 export default function HomeInfoContact({ icon, text, href }) {
     return (
         <Root>
-            <div dangerouslySetInnerHTML={{ __html: feather.icons[icon].toSvg() }}></div>
+            <div
+                style={{ color: theme.primary }}
+                dangerouslySetInnerHTML={{ __html: feather.icons[icon].toSvg() }}
+            ></div>
             <StyledA href={href}>{text}</StyledA>
         </Root>
     );

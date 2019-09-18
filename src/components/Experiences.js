@@ -1,5 +1,5 @@
 import React from 'react';
-import { animated, config, useTrail } from 'react-spring';
+import { animated, config, useTrail, useSpring } from 'react-spring';
 import styled from 'styled-components';
 import education from '../data/education';
 import { device } from '../mediaqueries';
@@ -31,6 +31,7 @@ const MissionsTitle = styled(animated.h1)`
     grid-column: 1/3;
     grid-row: 1/2;
     margin-top: 2rem;
+    border-bottom: 3px solid ${props => props.theme.primary};
 `;
 
 const Missions = styled(animated.div)`
@@ -52,6 +53,7 @@ const EducationTitle = styled(animated.h1)`
     grid-column: 1/3;
     grid-row: 3/4;
     margin-top: 2rem;
+    border-bottom: 3px solid ${props => props.theme.primary};
 `;
 
 const Education = styled(animated.div)`
@@ -79,15 +81,24 @@ export default function Experiences({ style }) {
         config: config.stiff,
         delay: 500
     });
+    const titleStyle = useSpring({
+        from: {
+            width: '0%'
+        },
+        to: {
+            width: '100%'
+        },
+        config: config.molasses
+    });
     return (
         <Root style={style}>
-            <MissionsTitle>Missions</MissionsTitle>
+            <MissionsTitle style={titleStyle}>Missions</MissionsTitle>
             <Missions>
                 {missions.map((it, index) => (
                     <ExperiencesMission style={missionsStyle[index]} key={it.title} {...it}></ExperiencesMission>
                 ))}
             </Missions>
-            <EducationTitle>Éducation</EducationTitle>
+            <EducationTitle style={titleStyle}>Éducation</EducationTitle>
             <Education>
                 {education.map((it, index) => (
                     <ExperiencesEducation style={experiencesStyle[index]} key={it.title} {...it}></ExperiencesEducation>

@@ -24,6 +24,7 @@ const Root = styled(animated.div)`
     padding: 1rem;
     grid-gap: 2rem;
     grid-column-gap: 4rem;
+    background-color: ${props => props.theme.background};
 `;
 
 const MissionsTitle = styled(animated.h1)`

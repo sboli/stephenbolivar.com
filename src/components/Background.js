@@ -38,7 +38,7 @@ export default function BackgroundParticles() {
                 ({ item, key, props }) =>
                     item && (
                         <ParticlesRoot key={key} style={props}>
-                            <Particles params={particlesConfig} width={'100%'} height={'100vh'}></Particles>
+                            <Particles params={particlesConfig} width={'100%'} height={'99.5vh'}></Particles>
                         </ParticlesRoot>
                     )
             )}

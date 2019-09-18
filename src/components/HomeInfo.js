@@ -21,7 +21,11 @@ const Root = styled(animated.div)`
         grid-column: 1;
         grid-row: 2/5;
         align-self: center;
-        justify-self: center;
+        justify-self: end;
+        margin-right: 3rem;
+    }
+    @media ${device.laptop} {
+        margin-right: 7rem;
     }
     @media ${device.laptop} {
         font-size: 1.33em;

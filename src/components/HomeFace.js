@@ -23,7 +23,11 @@ const FaceImgStyle = styled.img`
         max-width: 80%;
         grid-row: 2/5;
         height: 75%;
-        justify-self: center;
+        justify-self: start;
+        margin-left: 3rem;
+    }
+    @media ${device.laptop} {
+        margin-left: 7rem;
     }
 `;
 

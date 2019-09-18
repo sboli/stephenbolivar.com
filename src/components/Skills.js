@@ -21,6 +21,7 @@ const Root = styled(animated.div)`
     @media ${device.tablet} {
         margin-top: 10vh;
     }
+    background-color: ${props => props.theme.background};
 `;
 
 const Technical = styled(animated.div)`

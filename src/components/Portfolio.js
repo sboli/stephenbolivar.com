@@ -22,6 +22,8 @@ const Root = styled(animated.div)`
     padding: 1rem;
     grid-gap: 2rem;
     grid-column-gap: 4rem;
+    align-self: start;
+    margin-top: 20vh;
 `;
 
 export default function Portfolio({ style }) {

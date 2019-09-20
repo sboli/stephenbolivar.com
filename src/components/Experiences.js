@@ -70,17 +70,6 @@ const Education = styled(animated.div)`
 `;
 
 export default function Experiences({ style }) {
-    const missionsStyle = useTrail(missions.length, {
-        from: { opacity: 0, transform: 'translate3d(-20px, 40px, 0)' },
-        to: { opacity: 1, transform: 'translate3d(0px, 0, 0)' },
-        config: config.stiff
-    });
-    const experiencesStyle = useTrail(education.length, {
-        from: { opacity: 0, transform: 'translate3d(-20px, 40px, 0)' },
-        to: { opacity: 1, transform: 'translate3d(0px, 0, 0)' },
-        config: config.stiff,
-        delay: 500
-    });
     const titleStyle = useSpring({
         from: {
             width: '0%'
@@ -95,13 +84,13 @@ export default function Experiences({ style }) {
             <MissionsTitle style={titleStyle}>Missions</MissionsTitle>
             <Missions>
                 {missions.map((it, index) => (
-                    <ExperiencesMission style={missionsStyle[index]} key={it.title} {...it}></ExperiencesMission>
+                    <ExperiencesMission key={it.title} {...it}></ExperiencesMission>
                 ))}
             </Missions>
             <EducationTitle style={titleStyle}>Éducation</EducationTitle>
             <Education>
                 {education.map((it, index) => (
-                    <ExperiencesEducation style={experiencesStyle[index]} key={it.title} {...it}></ExperiencesEducation>
+                    <ExperiencesEducation key={it.title} {...it}></ExperiencesEducation>
                 ))}
             </Education>
         </Root>

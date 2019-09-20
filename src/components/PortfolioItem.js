@@ -3,6 +3,10 @@ import { animated, useSpring } from 'react-spring';
 import styled from 'styled-components';
 import { device } from '../mediaqueries';
 
+/**
+ * Each image must be a 600x250 rectangle
+ */
+
 const Root = styled(animated.div)`
     ${device.tablet} {
         max-width: 400px;
@@ -12,11 +16,15 @@ const Root = styled(animated.div)`
     box-shadow: 5px 5px 5px lightgray;
     border: 1px solid lightgray;
     cursor: pointer;
+    max-height: 250px;
+    overflow: hidden;
 `;
 
 const Img = styled.img`
     width: 100%;
     height: auto;
+    object-fit: cover;
+    object-position: center;
 `;
 
 const Overlay = styled(animated.div)`
@@ -57,7 +65,7 @@ export default function PortfolioItem({ style, title, image, url, description })
         to: async (next, cancel) => {
             next({ filter: hovered ? 'blur(15px)' : 'blur(0px)' });
             next({ opacity: hovered ? 1 : 0 });
-            next({ transform: hovered ? 'scale(1.05)' : 'scale(1)' });
+            //await next({ transform: hovered ? 'scale(1.05)' : 'scale(1)' });
         }
     });
 
@@ -78,7 +86,7 @@ export default function PortfolioItem({ style, title, image, url, description })
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <Img src={image + '.thumb.png'}></Img>
+            <Img src={image + '.png'}></Img>
             <Overlay style={overlayStyle}></Overlay>
             <Title style={titleStyle}>{title}</Title>
         </Root>

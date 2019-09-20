@@ -10,16 +10,16 @@ const Root = styled(animated.div)`
     grid-row: 2/3;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(auto-fill, auto);
     @media ${device.laptopL} {
         max-width: 70%;
+        grid-template-columns: 1fr 1fr 1fr;
     }
-    @media ${device.laptop} {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto;
+    @media ${device.tablet} {
+        grid-template-columns: 1fr 1fr;
     }
-    padding: 1rem;
+    padding: 2rem;
     grid-gap: 2rem;
     grid-column-gap: 4rem;
     align-self: start;

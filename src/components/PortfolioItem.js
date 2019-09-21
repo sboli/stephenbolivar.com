@@ -86,7 +86,7 @@ export default function PortfolioItem({ style, title, image, url, description })
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <Img src={image + '.png'}></Img>
+            <Img src={image}></Img>
             <Overlay style={overlayStyle}></Overlay>
             <Title style={titleStyle}>{title}</Title>
         </Root>

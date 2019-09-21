@@ -130,9 +130,11 @@ export default function PortfolioItem({ style, title, image, url, description })
                     ></div>
                 </Description>
             </Informations>
-            <LinkIcon style={titleStyle} onClick={openLink}>
-                <Icon name="external-link" size="24"></Icon>
-            </LinkIcon>
+            {url && (
+                <LinkIcon style={titleStyle} onClick={openLink}>
+                    <Icon name="external-link" size="24"></Icon>
+                </LinkIcon>
+            )}
             <Img src={image}></Img>
         </Root>
     );

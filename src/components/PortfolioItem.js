@@ -117,6 +117,7 @@ export default function PortfolioItem({ style, title, image, url, description })
             style={{ ...style, ...hoverStyle }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
+            onClick={() => setHovered(!hovered)}
         >
             <Overlay style={overlayStyle}></Overlay>
             <Informations style={titleStyle}>

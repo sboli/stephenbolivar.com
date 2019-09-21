@@ -2,29 +2,28 @@ import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 import styled from 'styled-components';
 import { device } from '../mediaqueries';
+import Icon from './Icon';
 
 /**
  * Each image must be a 600x250 rectangle
  */
 
 const Root = styled(animated.div)`
-    ${device.tablet} {
+    max-height: 400px;
+    ${device.laptop} {
         max-width: 400px;
         height: auto;
+        max-height: 240px;
     }
     box-shadow: 1px;
     box-shadow: 5px 5px 5px lightgray;
     border: 1px solid lightgray;
-    cursor: pointer;
-    max-height: 250px;
-    overflow: hidden;
 `;
 
 const Img = styled.img`
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
 `;
 
 const Overlay = styled(animated.div)`
@@ -33,7 +32,7 @@ const Overlay = styled(animated.div)`
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.94);
 `;
 
 const Informations = styled(animated.div)`
@@ -47,6 +46,7 @@ const Informations = styled(animated.div)`
     color: ${props => props.theme.textPrimary};
     padding: 2rem;
     grid-gap: 1rem;
+    overflow: scroll;
 `;
 
 const Title = styled(animated.div)`
@@ -63,6 +63,15 @@ const Description = styled(animated.div)`
     grid-column: 1/3;
     grid-row: 2/3;
     color: ${props => props.theme.textSecondary};
+    padding-bottom: 2rem;
+`;
+
+const LinkIcon = styled(animated.div)`
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+    cursor: pointer;
 `;
 
 export default function PortfolioItem({ style, title, image, url, description }) {
@@ -80,7 +89,7 @@ export default function PortfolioItem({ style, title, image, url, description })
     const overlayStyle = useSpring({
         from: { opacity: 0 },
         to: async (next, cancel) => {
-            next({ filter: hovered ? 'blur(15px)' : 'blur(0px)' });
+            //next({ filter: hovered ? 'blur(15px)' : 'blur(0px)' });
             next({ opacity: hovered ? 1 : 0 });
             //await next({ transform: hovered ? 'scale(1.05)' : 'scale(1)' });
         }
@@ -96,6 +105,12 @@ export default function PortfolioItem({ style, title, image, url, description })
             transform: 'translate3d(0, 0px, 0)'
         }
     });
+
+    const openLink = () => {
+        if (typeof window != 'undefined') {
+            window.open(url, '_blank');
+        }
+    };
 
     return (
         <Root
@@ -114,6 +129,9 @@ export default function PortfolioItem({ style, title, image, url, description })
                     ></div>
                 </Description>
             </Informations>
+            <LinkIcon style={titleStyle} onClick={openLink}>
+                <Icon name="external-link" size="24"></Icon>
+            </LinkIcon>
             <Img src={image}></Img>
         </Root>
     );

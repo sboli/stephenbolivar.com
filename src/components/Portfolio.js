@@ -19,11 +19,10 @@ const Root = styled(animated.div)`
     @media ${device.tablet} {
         grid-template-columns: 1fr 1fr;
     }
-    padding: 2rem;
-    grid-gap: 2rem;
-    grid-column-gap: 4rem;
+    padding: 2.5rem;
+    grid-gap: 2.5rem;
     align-self: start;
-    margin-top: 20vh;
+    margin-top: 10vh;
 `;
 
 export default function Portfolio({ style }) {

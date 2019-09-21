@@ -8,8 +8,8 @@ export default [
     {
         title: 'Tiling Window Manager Notification',
         url: 'https://github.com/sboli/twmn',
-        images: '/images/portfolio.2.png',
+        image: '/images/portfolio.2.png',
         description: `Une application client-serveur permettant d'afficher des notifications
-        correctement intégrées sur les gestionnaires des fenêtres dont tout l'espace est occupé par le contenu`
+        correctement intégrées sur les gestionnaires des fenêtres dont tout l'espace est occupé par le contenu.`
     }
 ];

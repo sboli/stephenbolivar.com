@@ -36,16 +36,33 @@ const Overlay = styled(animated.div)`
     background-color: rgba(255, 255, 255, 0.85);
 `;
 
-const Title = styled(animated.div)`
+const Informations = styled(animated.div)`
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
     position: absolute;
     left: 0;
-    top: 40%;
     width: 100%;
-    text-align: center;
-    height: auto;
+    height: 100%;
+    color: ${props => props.theme.textPrimary};
+    padding: 2rem;
+    grid-gap: 1rem;
+`;
+
+const Title = styled(animated.div)`
+    grid-column: 1/3;
+    grid-row: 1/2;
+    width: 100%;
     font-weight: bold;
     font-size: 1.33rem;
+    text-align: center;
     color: ${props => props.theme.textPrimary};
+`;
+
+const Description = styled(animated.div)`
+    grid-column: 1/3;
+    grid-row: 2/3;
+    color: ${props => props.theme.textSecondary};
 `;
 
 export default function PortfolioItem({ style, title, image, url, description }) {
@@ -86,9 +103,18 @@ export default function PortfolioItem({ style, title, image, url, description })
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
-            <Img src={image}></Img>
             <Overlay style={overlayStyle}></Overlay>
-            <Title style={titleStyle}>{title}</Title>
+            <Informations style={titleStyle}>
+                <Title>{title}</Title>
+                <Description>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: description
+                        }}
+                    ></div>
+                </Description>
+            </Informations>
+            <Img src={image}></Img>
         </Root>
     );
 }

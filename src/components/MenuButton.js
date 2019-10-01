@@ -39,12 +39,7 @@ export default function MenuButton() {
     return (
         <Root>
             <nav>
-                <StyledButton
-                    onClick={e => dispatch({ type: 'TOGGLE_MENU' })}
-                    type="button"
-                    aria-label="Menu"
-                    aria-controls="navigation"
-                >
+                <StyledButton onClick={e => dispatch({ type: 'TOGGLE_MENU' })} type="button" aria-label="menu">
                     <Icon name={'menu'}></Icon>
                 </StyledButton>
             </nav>

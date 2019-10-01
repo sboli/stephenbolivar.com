@@ -6,7 +6,7 @@ import items from '../data/menu-items';
 import MenuButton from './MenuButton';
 import NavbarItem from './NavbarItem';
 
-const TopMenu = styled.div`
+const TopMenu = styled.head`
     margin-left: auto;
     margin-right: auto;
     width: 100%;

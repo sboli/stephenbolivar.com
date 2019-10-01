@@ -11,7 +11,8 @@ const Root = styled(animated.div)`
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 10% auto 5% 15% 15%;
+    grid-template-rows: auto auto;
+    grid-row-gap: 1rem;
     padding: 1rem;
     align-self: start;
     margin-top: 20vh;
@@ -31,7 +32,7 @@ export default function Home({ style }) {
             transform: 'translate3d(0, 0px, 0)',
             opacity: 1
         },
-        config: config.slow
+        config: config.default
     });
     const infoStyle = useSpring({
         from: {

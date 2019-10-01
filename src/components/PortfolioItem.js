@@ -135,7 +135,7 @@ export default function PortfolioItem({ style, title, image, url, description })
                     <Icon name="external-link" size="24"></Icon>
                 </LinkIcon>
             )}
-            <Img src={image}></Img>
+            <Img src={image} alt={description}></Img>
         </Root>
     );
 }

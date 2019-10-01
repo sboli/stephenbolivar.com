@@ -19,12 +19,14 @@ const ParticlesRoot = styled(animated.div)``;
 
 export default function BackgroundParticles() {
     const { state } = useContext(AppContext);
+    const [show, set] = useState(false);
 
     useEffect(() => {
-        set(state.activePage === 'home');
+        setTimeout(() => {
+            set(state.activePage === 'home');
+        }, 1000);
     }, [state.activePage]);
 
-    const [show, set] = useState(false);
     const transitions = useTransition(show, null, {
         from: { opacity: 0 },
         enter: { opacity: 1 },

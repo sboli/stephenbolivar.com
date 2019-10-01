@@ -5,7 +5,7 @@ import { device } from '../mediaqueries';
 import { animated } from 'react-spring';
 import { info } from '../data/home';
 
-const Root = styled(animated.div)`
+const Root = styled(animated.section)`
     grid-column: 1/3;
     grid-row: 4;
     justify-content: right;

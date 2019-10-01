@@ -9,7 +9,7 @@ import items from './data/menu-items';
 import theme from './theme';
 import Background from './components/Background';
 
-const Root = styled.div`
+const Root = styled.main`
     color: ${props => props.theme.textPrimary};
     font-family: 'Montserrat', sans-serif;
     display: grid;
@@ -24,7 +24,7 @@ const Root = styled.div`
 function App() {
     const [state, dispatch] = useReducer(appReducer, {
         isMenuOpen: false,
-        activePage: process.env.NODE_ENV === 'production' ? 'home' : 'portfolio'
+        activePage: process.env.NODE_ENV === 'production' ? 'home' : 'home'
     });
     const transitions = useTransition(state.activePage, item => item, {
         from: { opacity: 0, transform: 'translate3d(100%, 0, 0)' },

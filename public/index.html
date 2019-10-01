@@ -5,7 +5,10 @@
         <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FAFAFA" />
-        <meta name="description" content="Développement d'applications web modernes. Donnez vie à votre prochain projet !" />
+        <meta
+            name="description"
+            content="Développement d'applications web modernes. Donnez vie à votre prochain projet !"
+        />
         <link rel="apple-touch-icon" href="logo192.png" />
         <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,27 +27,15 @@
         <title>Stephen BOLIVAR - Développeur Fullstack</title>
         <style>
             @font-face {
-                font-family: Helvetica;
+                font-family: Montserrat;
                 font-display: swap;
-                src: local('Helvetica');
+                src: url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
             }
+            @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
         </style>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
-        <script type="text/javascript">
-            WebFontConfig = {
-                google: { families: ['Montserrat'] }
-            };
-            (function() {
-                var wf = document.createElement('script');
-                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                wf.type = 'text/javascript';
-                wf.async = 'true';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(wf, s);
-            })();
-        </script>
     </body>
 </html>

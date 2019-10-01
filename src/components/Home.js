@@ -23,28 +23,6 @@ const Root = styled(animated.div)`
 
 export default function Home({ style }) {
     const [firstDraw, setFirstDraw] = useState(true);
-    const faceStyle = useSpring({
-        from: {
-            transform: 'translate3d(100px, 0, 0)',
-            opacity: 0
-        },
-        to: {
-            transform: 'translate3d(0, 0px, 0)',
-            opacity: 1
-        },
-        config: config.default
-    });
-    const infoStyle = useSpring({
-        from: {
-            transform: 'translate3d(-100px, 0, 0)',
-            opacity: 0
-        },
-        to: {
-            transform: 'translate3d(0, 0px, 0)',
-            opacity: 1
-        },
-        config: config.default
-    });
     useEffect(() => {
         setTimeout(() => {
             setFirstDraw(false);
@@ -52,8 +30,8 @@ export default function Home({ style }) {
     }, []);
     return (
         <Root style={firstDraw ? {} : style}>
-            <HomeFace style={firstDraw ? faceStyle : {}}></HomeFace>
-            <HomeInfo style={firstDraw ? infoStyle : {}}></HomeInfo>
+            <HomeFace></HomeFace>
+            <HomeInfo></HomeInfo>
         </Root>
     );
 }

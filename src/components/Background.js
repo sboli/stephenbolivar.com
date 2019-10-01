@@ -24,7 +24,7 @@ export default function BackgroundParticles() {
     useEffect(() => {
         setTimeout(() => {
             set(state.activePage === 'home');
-        }, 1000);
+        }, 750);
     }, [state.activePage]);
 
     const transitions = useTransition(show, null, {

@@ -22,14 +22,8 @@ const Root = styled(animated.div)`
 `;
 
 export default function Home({ style }) {
-    const [firstDraw, setFirstDraw] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setFirstDraw(false);
-        }, 600);
-    }, []);
     return (
-        <Root style={firstDraw ? {} : style}>
+        <Root>
             <HomeFace></HomeFace>
             <HomeInfo></HomeInfo>
         </Root>

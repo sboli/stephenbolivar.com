@@ -18,6 +18,12 @@ export default [
     description: `Un portail captif réalisé avec NuxtJS + Vuex. Backend en laravel.`
   },
   {
+    title: "Progressive Web App ZeeWIFI",
+    url: 'https://app.zeewifi.com',
+    image: "/images/portfolio.7.png",
+    description: `Une application simple permetant d'afficher une carte interactive simple. Réalisée avec le framework Quasar`
+  },
+  {
     title: "Tiling Window Manager Notification",
     url: "https://github.com/sboli/twmn",
     image: "/images/portfolio.2.png",

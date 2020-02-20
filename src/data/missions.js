@@ -12,11 +12,22 @@ export default [
         <p>
             En charge d'une infrastructure fournissant du wifi marketing.
             <ul>
+                <li>Mise en place du monitoring, ainsi que du suivi des KPI. Basé sur Grafana.</li>
                 <li>Développement d'une application composée d'un tableau de bord VueJS et d'un backend Laravel/MySQL</li>
                 <li>Intégration de Radius, OpenWRT, Coova-Chilli</li>
                 <li>Création d'un portail captif Nuxt.js</li>
+                <li>Conteneurisation de toute la stack technique pré-citée.</li>
+                <li>Mise en place d'une architecture à haute disponibilité, scalable horizontalement</li>
                 <li>Gestion de projets</li>
             </ul>
+        </p>
+        <p><br>
+            Industrialisation du déploiement de sites wordpress.
+            <ul>
+                <li>Conteneurisation d'une stack technique basée sur Wordpress + MySQL</li>
+                <li>Automatisation de la configuration des domaines</li>
+            </ul>
+        </p>
         `
     },
     {

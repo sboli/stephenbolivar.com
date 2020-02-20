@@ -20,8 +20,8 @@ export default {
     htmlContent: `Je suis Stephen, développeur particulièrement intéressé par les stack full Javascript ainsi que les
             architectures microservices et serverless.`,
     stack: [
-        react,
         vue,
+        react,
         sass,
         graphql,
         node,

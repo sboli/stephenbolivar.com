@@ -1,6 +1,6 @@
 export const technical = [
     {
-        title: 'ReactJS',
+        title: 'Vue.js',
         progress: 0.9,
         row: 0
     },

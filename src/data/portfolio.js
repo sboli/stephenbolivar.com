@@ -6,13 +6,19 @@ export default [
     description: `Une PWA réalisée avec ReactJS et déployée sur netlify.`
   },
   {
+    title: "Site internet statique",
+    url: "https://body.gp",
+    image: "/images/portfolio.8.png",
+    description: `Un site statique réalisé à partir d'un template SVG. Compilation statique Nuxt.js`
+  },
+  {
     title: "Frontend Vue.js",
     url: "https://admin.zeewifi.com",
     image: "/images/portfolio.5.png",
     description: `Un tableau de bord réalisé avec VueJs. Backend en laravel.`
   },
   {
-    title: "Frontend Nuxt.js",
+    title: "Frontenad Nuxt.js",
     url: undefined,
     image: "/images/portfolio.6.png",
     description: `Un portail captif réalisé avec NuxtJS + Vuex. Backend en laravel.`

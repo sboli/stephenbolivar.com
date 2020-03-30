@@ -7,7 +7,7 @@ export default [
   },
   {
     title: "Site internet statique",
-    url: "https://body.gp",
+    url: "https://budy.gp",
     image: "/images/portfolio.8.png",
     description: `Un site statique réalisé à partir d'un template SVG. Compilation statique Nuxt.js`
   },
@@ -18,7 +18,7 @@ export default [
     description: `Un tableau de bord réalisé avec VueJs. Backend en laravel.`
   },
   {
-    title: "Frontenad Nuxt.js",
+    title: "Frontend Nuxt.js",
     url: undefined,
     image: "/images/portfolio.6.png",
     description: `Un portail captif réalisé avec NuxtJS + Vuex. Backend en laravel.`

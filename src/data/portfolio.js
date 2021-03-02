@@ -9,13 +9,31 @@ const Portfolio = [
     title: 'Application Budy',
     url: 'https://budy.gp',
     image: '/images/portfolio.9.png',
-    description: `Une application Click & Collect et bons plans.<br><small>React Native, Nest.js, MongoDB</small>`,
+    description: `Une application Click & Collect et bons plans.<br><small>React Native, Nest.js, MongoDB, Mqtt. Paiement.</small>`,
+  },
+  {
+    title: 'Prise de RDV par internet',
+    url: 'https://tiringo.com',
+    image: '/images/portfolio.13.png',
+    description: `Une plateforme de prise de RDV par internet. Gestion d'agenda, rappel de rdv par SMS.<br><small>Vue, Nest.js, Mysql</small>`,
+  },
+  {
+    title: 'Appli web click & collect',
+    url: 'https://shop.budy.gp/partners/88',
+    image: '/images/portfolio.12.png',
+    description: `Une application web permettant de commande en click & collect.<br><small>Vue, Nest.js, MongoDB, Mqtt. Paiement</small>`,
+  },
+  {
+    title: 'Application point de vente Budy',
+    url: 'https://budy.gp',
+    image: '/images/portfolio.11.png',
+    description: `Un système POS permettant de recevoir des commandes click & collect, imprimer un bon de commande, livrer la commande via QrCode<br><small>Java, React Native. Mqtt, Websocket.</small>`,
   },
   {
     title: 'Ce portfolio',
     url: 'https://stephenbolivar.com',
     image: '/images/portfolio.1.png',
-    description: `Site web personnel à visée SEO.<br><small>React,Netlify</small>`,
+    description: `Site web personnel.<br><small>React,Netlify</small>`,
   },
   {
     title: 'Frontend Vue.js',

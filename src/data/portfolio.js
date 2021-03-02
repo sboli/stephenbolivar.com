@@ -30,6 +30,11 @@ const Portfolio = [
     description: `Un système POS permettant de recevoir des commandes click & collect, imprimer un bon de commande, livrer la commande via QrCode<br><small>Java, React Native. Mqtt, Websocket.</small>`,
   },
   {
+    title: 'Bot pour un jeu vidéo',
+    image: '/images/portfolio.14.png',
+    description: `Un bot permettant de compléter un mini jeu de manière autonome grace à la vision par ordinateur.<br><small>OpenCV, Python</small>`,
+  },
+  {
     title: 'Ce portfolio',
     url: 'https://stephenbolivar.com',
     image: '/images/portfolio.1.png',

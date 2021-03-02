@@ -15,26 +15,28 @@ import redis from 'simple-icons/icons/redis';
 import sass from 'simple-icons/icons/sass';
 import vue from 'simple-icons/icons/vue-dot-js';
 
-export default {
-    image: '/images/web_developer.svg',
-    htmlContent: `Je suis Stephen, développeur particulièrement intéressé par les stack full Javascript ainsi que les
+const About = {
+  image: '/images/web_developer.svg',
+  htmlContent: `Je suis Stephen, développeur particulièrement intéressé par les stack full Javascript ainsi que les
             architectures microservices et serverless.`,
-    stack: [
-        vue,
-        react,
-        sass,
-        graphql,
-        node,
-        laravel,
-        firebase,
-        netlify,
-        mongodb,
-        mysql,
-        redis,
-        gcp,
-        aws,
-        git,
-        grafana,
-        docker
-    ]
+  stack: [
+    vue,
+    react,
+    sass,
+    graphql,
+    node,
+    laravel,
+    firebase,
+    netlify,
+    mongodb,
+    mysql,
+    redis,
+    gcp,
+    aws,
+    git,
+    grafana,
+    docker,
+  ],
 };
+
+export default About;

@@ -1,5 +1,28 @@
 const Missions = [
   {
+    title: 'Lead developpeur',
+    company: {
+      name: 'SOFY',
+      url: 'http://sofy.fr/',
+      logoUrl: '/images/logo_sofy.png',
+    },
+    start: '08-2020',
+    end: undefined,
+    htmlContent: `
+        <p>
+            Lead technique sur un ensemble de projets. De de la plateforme marketing web à l'appli mobile.
+            <ul>
+                <li>Méthode Agile Scrum</li>
+                <li>Reporting, KPI</li>
+                <li>Test driven development</li>
+                <li>Revues de code</li>
+                <li>Développements sur les projets présents en portfolio</li>
+                <li>Gestion de projets</li>
+            </ul>
+        </p>
+        `,
+  },
+  {
     title: 'Développeur fullstack',
     company: {
       name: 'ZEENETWORKS',
@@ -18,14 +41,8 @@ const Missions = [
                 <li>Création d'un portail captif Nuxt.js</li>
                 <li>Conteneurisation de toute la stack technique pré-citée.</li>
                 <li>Mise en place d'une architecture à haute disponibilité, scalable horizontalement</li>
+                <li>Industrialisation du déploiement de sites wordpress.</li>
                 <li>Gestion de projets</li>
-            </ul>
-        </p>
-        <p><br>
-            Industrialisation du déploiement de sites wordpress.
-            <ul>
-                <li>Conteneurisation d'une stack technique basée sur Wordpress + MySQL</li>
-                <li>Automatisation de la configuration des domaines</li>
             </ul>
         </p>
         `,

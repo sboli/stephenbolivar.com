@@ -16,7 +16,7 @@ const Missions = [
                 <li>Reporting, KPI</li>
                 <li>Test driven development</li>
                 <li>Revues de code</li>
-                <li>Développements sur les projets présents en portfolio</li>
+                <li>Migration de toute la stack sur un cluster Kubernetes.</li>
                 <li>Gestion de projets</li>
             </ul>
         </p>

@@ -14,6 +14,7 @@ const Missions = [
             <ul>
                 <li>Méthode Agile Scrum</li>
                 <li>Reporting, KPI</li>
+                <li>Mise en place de tests e2e avec Jest et Playwright</li>
                 <li>Test driven development</li>
                 <li>Revues de code</li>
                 <li>Migration de toute la stack sur un cluster Kubernetes.</li>
@@ -35,6 +36,7 @@ const Missions = [
         <p>
             En charge d'une infrastructure fournissant du wifi marketing.
             <ul>
+                <li>Développement d'APIs Nest.js.(TypeORM. Mongoose. Redis. Microservices. RabbitMQ. Jest) </li>
                 <li>Mise en place du monitoring, ainsi que du suivi des KPI. Basé sur Grafana.</li>
                 <li>Développement d'une application composée d'un tableau de bord VueJS et d'un backend Laravel/MySQL</li>
                 <li>Intégration de Radius, OpenWRT, Coova-Chilli</li>

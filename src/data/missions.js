@@ -10,16 +10,12 @@ const Missions = [
     end: undefined,
     htmlContent: `
         <p>
-            Création d'une plateforme d'envoi de SMS avec des contraintes de trafic important et de haute disponibilité.
+            Création d'une plateforme d'envoi de SMS avec des contraintes de trafic important et de haute disponibilité. <br>
             Coordination technique sur le développement d'une application web et mobile.
             <ul>
                 <li>Méthode Agile Scrum</li>
-                <li>Reporting, KPI</li>
-                <li>Mise en place de tests e2e avec Jest et Playwright</li>
-                <li>Test driven development</li>
-                <li>Revues de code</li>
-                <li>Migration de toute la stack sur un cluster Kubernetes.</li>
-                <li>Gestion de projets</li>
+                <li>Business Intelligence / Data Integration</li>
+                <li>Scaling et haute disponibilité</li>
             </ul>
         </p>
         `,

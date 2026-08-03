@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import AppContext from '../context';
-import Particles from 'react-particles-js';
+import Particles from '@tsparticles/react';
 import particlesConfig from '../particlesjs-config.json';
 import { animated, useTransition, config } from 'react-spring';
 
@@ -40,7 +40,11 @@ export default function BackgroundParticles() {
                 ({ item, key, props }) =>
                     item && (
                         <ParticlesRoot key={key} style={props}>
-                            <Particles params={particlesConfig} width={'100%'} height={'99.5vh'}></Particles>
+                            <Particles
+                                id="background-particles"
+                                options={particlesConfig}
+                                style={{ width: '100%', height: '99.5vh' }}
+                            />
                         </ParticlesRoot>
                     )
             )}

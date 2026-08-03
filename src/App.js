@@ -8,6 +8,7 @@ import AppContext, { appReducer } from './context';
 import items from './data/menu-items';
 import theme from './theme';
 import Background from './components/Background';
+import Resume from './components/Resume';
 
 const Root = styled.main`
     color: ${props => props.theme.textPrimary};
@@ -43,6 +44,7 @@ function App() {
                         const Page = items.filter(it => it.id === item)[0].component;
                         return <Page style={props} key={key}></Page>;
                     })}
+                    <Resume />
                 </Root>
             </ThemeProvider>
         </AppContext.Provider>

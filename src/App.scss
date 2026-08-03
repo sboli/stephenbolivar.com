@@ -22,3 +22,237 @@ body {
     font-display: swap;
     font-family: 'Montserrat', sans-serif;
 }
+
+.print-resume {
+    display: none;
+}
+
+@page {
+    size: A4;
+    margin: 13mm 15mm 15mm;
+}
+
+@media print {
+    html,
+    body,
+    #root {
+        width: 100%;
+        min-height: 0;
+        background: #fff;
+    }
+
+    body {
+        color: #20242a;
+        font-size: 9.5pt;
+        line-height: 1.38;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    main.App {
+        display: block !important;
+        width: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        color: #20242a;
+    }
+
+    .App > :not(.print-resume) {
+        display: none !important;
+    }
+
+    .print-resume {
+        display: block;
+        width: 100%;
+        color: #20242a;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .resume-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 55mm;
+        gap: 10mm;
+        align-items: end;
+        padding: 0 0 6mm;
+        border-bottom: 2.5pt solid #ff6363;
+    }
+
+    .resume-eyebrow {
+        margin-bottom: 1.5mm;
+        color: #bd3d3d;
+        font-size: 7.5pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    .resume-header h1 {
+        margin: 0;
+        font-size: 25pt;
+        line-height: 1;
+        letter-spacing: -0.035em;
+    }
+
+    .resume-title {
+        margin-top: 2.5mm;
+        color: #4e555e;
+        font-size: 10.5pt;
+        font-weight: 600;
+    }
+
+    .resume-contact {
+        display: grid;
+        gap: 0.8mm;
+        color: #4e555e;
+        font-size: 8.3pt;
+        font-style: normal;
+        text-align: right;
+    }
+
+    .resume-contact a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .resume-intro,
+    .resume-skills {
+        display: grid;
+        grid-template-columns: 31mm minmax(0, 1fr);
+        gap: 5mm;
+        padding: 5mm 0;
+        border-bottom: 0.5pt solid #d8dce0;
+    }
+
+    .print-resume h2 {
+        color: #bd3d3d;
+        font-size: 9pt;
+        font-weight: 700;
+        letter-spacing: 0.11em;
+        line-height: 1.25;
+        text-transform: uppercase;
+    }
+
+    .resume-intro p {
+        max-width: 150mm;
+    }
+
+    .resume-skill-groups {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 7mm;
+    }
+
+    .resume-skill-groups h3 {
+        margin-bottom: 1mm;
+        font-size: 8.5pt;
+    }
+
+    .resume-skill-groups p {
+        color: #4e555e;
+        font-size: 8.2pt;
+    }
+
+    .resume-section {
+        padding-top: 6mm;
+    }
+
+    .resume-section > h2 {
+        margin-bottom: 4mm;
+    }
+
+    .resume-entry {
+        position: relative;
+        margin-left: 3mm;
+        padding: 0 0 5mm 6mm;
+        border-left: 0.75pt solid #c7cbd0;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .resume-entry::before {
+        position: absolute;
+        top: 1.5mm;
+        left: -2mm;
+        width: 3mm;
+        height: 3mm;
+        border: 0.75pt solid #ff6363;
+        border-radius: 50%;
+        background: #fff;
+        content: '';
+    }
+
+    .resume-entry-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 5mm;
+        align-items: baseline;
+        margin-bottom: 1.5mm;
+    }
+
+    .print-resume h3 {
+        font-size: 10.2pt;
+        line-height: 1.25;
+    }
+
+    .resume-company {
+        margin-top: 0.5mm;
+        color: #bd3d3d;
+        font-size: 8.2pt;
+        font-weight: 600;
+    }
+
+    .resume-date {
+        color: #666d75;
+        font-size: 8pt;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .resume-description {
+        color: #343940;
+        font-size: 8.35pt;
+    }
+
+    .resume-description ul {
+        margin-top: 1mm;
+        padding-left: 3mm;
+        columns: 2;
+        column-gap: 8mm;
+    }
+
+    .resume-description li {
+        margin-left: 3mm;
+        break-inside: avoid;
+    }
+
+    .resume-education {
+        break-before: auto;
+    }
+
+    .resume-education-entry {
+        display: grid;
+        grid-template-columns: 20mm minmax(0, 1fr);
+        gap: 4mm;
+        padding: 0 0 4mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .resume-education-entry + .resume-education-entry {
+        margin-top: 1.5mm;
+    }
+
+    .resume-education-entry .resume-description {
+        margin-top: 1mm;
+    }
+
+    .resume-footer {
+        margin-top: 3mm;
+        padding-top: 2mm;
+        border-top: 0.5pt solid #d8dce0;
+        color: #777e86;
+        font-size: 7pt;
+        letter-spacing: 0.04em;
+        text-align: center;
+    }
+}
